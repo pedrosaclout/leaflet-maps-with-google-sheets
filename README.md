@@ -4,7 +4,7 @@ Customize Leaflet maps with a linked Google Sheets template or CSV files and Geo
 ![Preview](preview.jpg)
 
 ## Live links (replace with your own)
-- Leaflet Map https://pedrosaclout.github.io/leaflet-maps-with-google-sheets/
+- Leaflet Map https://pedrosaclout.github.io/mapa-alumni/
 - Google Sheets template https://docs.google.com/spreadsheets/d/1dhK122E657jigZ6LCxmh73vPygRfE5v_p5knfWD5p-U/edit#gid=0
 
 ## Create your own
