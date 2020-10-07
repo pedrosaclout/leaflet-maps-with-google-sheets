@@ -79,17 +79,10 @@ form {
   radius: 3;
 }
 
-.loader,
-.loader:before,
-.loader:after {
-}
-.loader:before,
-.loader:after {
-}
-.loader:before {
-}
 .loader {
-  
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 /* Technically there are two map titles, on the left and on the right,
