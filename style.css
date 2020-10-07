@@ -85,14 +85,8 @@ form {
 }
 .loader:before,
 .loader:after {
-  position: absolute;
-  top: 0;
-  content: '';
 }
 .loader:before {
-  left: -1.5em;
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
 }
 .loader {
   
