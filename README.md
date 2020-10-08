@@ -19,8 +19,8 @@ To geocode (find latitude and longitude coordinates), we recommend installing th
 Reconnect your Google Sheet ID to the `google-doc-url.js` file in your new repo.
 
 ## Credits (and licenses)
-Customized by Pedro Sá Couto (http://pedrosacouto.com/) and Rita Graça (http://ritagraca.com/) (2020), for UP.
-Developed by [Ilya Ilyankou](https://github.com/ilyankou) and [Jack Dougherty](https://github.com/jackdougherty) with support from Trinity College CT.
+Customized by Pedro Sá Couto (http://pedrosacouto.com/) and Rita Graça (http://ritagraca.com/) (2020), for UP.<br>
+Developed by [Ilya Ilyankou](https://github.com/ilyankou) and [Jack Dougherty](https://github.com/jackdougherty) with support from Trinity College CT.<br>
 Inspired by Code for Atlanta mapsfor.us (2016) https://github.com/codeforatlanta/mapsforus (BSD-3-Clause)
 
 We use [Google Sheets API version 4](https://developers.google.com/sheets/api), with these open-source components:
