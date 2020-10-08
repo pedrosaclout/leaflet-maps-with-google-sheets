@@ -1,5 +1,5 @@
-# Leaflet Maps with Google Sheets
-Customize Leaflet maps with a linked Google Sheets template or CSV files and GeoJSON data on GitHub
+# Alumni Map with Leaflet Maps and Google Sheets
+Leaflet Alumni map with a linked Google Sheets on GitHub
 
 ![Preview](preview.jpg)
 
