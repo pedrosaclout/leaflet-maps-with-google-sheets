@@ -29,7 +29,7 @@ $(window).on('load', function() {
   function centerAndZoomMap(points) {
     var lat = map.getCenter().lat, latSet = false;
     var lon = map.getCenter().lng, lonSet = false;
-    var zoom = 12, zoomSet = false;
+    var zoom = 8, zoomSet = false;
     var center;
 
     if (getSetting('_initLat') !== '') {
