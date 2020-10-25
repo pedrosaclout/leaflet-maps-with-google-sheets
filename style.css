@@ -186,7 +186,6 @@ div.dataTables_scrollHead {
 .dataTable * {
   font-family: "Helvetica Neue", Arial;
   border: 0 !important;
-  width: 30vw;
 }
 
 div.dataTables_scrollHead table.display {
@@ -234,4 +233,8 @@ span.legend-icon {
 
 .ladder form, .ladder div {
   display: block;
+}
+
+table {
+  width: 30vw;
 }
