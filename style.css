@@ -118,15 +118,9 @@ footer {
   height: 2.5rem;/* Footer height */
   background-color: black;
   color: white;
+  z-index: 2000;
 }
 
-#maptable {
-  width: 30vw;
-}
-
-.display {
-  width: 30vw;
-}
 
 /* Technically there are two map titles, on the left and on the right,
  * at all times. On a big screen, map title in the right column is not
