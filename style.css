@@ -186,6 +186,7 @@ div.dataTables_scrollHead {
 .dataTable * {
   font-family: "Helvetica Neue", Arial;
   border: 0 !important;
+  width: 50%;
 }
 
 div.dataTables_scrollHead table.display {
