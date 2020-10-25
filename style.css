@@ -157,7 +157,7 @@ footer {
 
 #mobile-intro-popup p {
   margin: 10px 0 10px 0;
-  max-height: 80vh;
+  max-height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -269,4 +269,16 @@ span.legend-icon {
 
 .ladder form, .ladder div {
   display: block;
+}
+
+/* ADDED to align table to the left */
+
+.dataTables_wrapper{
+  display: inline-block;
+  width: 29vw;
+  vertical-align:top;
+}
+
+#map{
+  display: inline-block;
 }
