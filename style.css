@@ -111,6 +111,10 @@ form {
   background-color: rgba(78, 0, 0, 0.2);
 }
 
+.display dataTable no-footer {
+  width: 30vw;
+}
+
 /* Technically there are two map titles, on the left and on the right,
  * at all times. On a big screen, map title in the right column is not
  * displayed. On a mobile device, title in the right column is shown with 0
