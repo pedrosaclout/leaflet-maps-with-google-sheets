@@ -111,7 +111,7 @@ form {
   background-color: rgba(78, 0, 0, 0.2);
 }
 
-table.dataTable{
+.table.dataTable, .dataTables_wrapper .dataTables_processing{
   width:30%;
 }
 
