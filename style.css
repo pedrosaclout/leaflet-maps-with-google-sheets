@@ -87,8 +87,7 @@ form {
   text-align: center;
 }
 
-/* Table */
-.dataTables_scrollHeadInner{
+table.display {
   width: 30vw;
 }
 
