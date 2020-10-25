@@ -87,6 +87,13 @@ form {
   text-align: center;
 }
 
+.marker-cluster-small div{
+  background-color: rgba(172, 4, 4, 0.6);
+}
+
+.marker-cluster-small {
+  background-color: rgba(172, 4, 4, 0.2);
+}
 
 /* Technically there are two map titles, on the left and on the right,
  * at all times. On a big screen, map title in the right column is not
