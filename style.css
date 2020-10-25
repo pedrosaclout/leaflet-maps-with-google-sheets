@@ -111,13 +111,21 @@ form {
   background-color: rgba(78, 0, 0, 0.2);
 }
 
-#footer {
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 2.5rem;/* Footer height */
   background-color: black;
   color: white;
+}
+
+#maptable {
+  width: 30vw;
+}
+
+.display {
+  width: 30vw;
 }
 
 /* Technically there are two map titles, on the left and on the right,
