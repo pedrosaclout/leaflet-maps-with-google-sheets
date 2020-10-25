@@ -129,7 +129,8 @@ $(window).on('load', function() {
           point['Group'] + '</b><br>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           point['Description'] +
-          point['Share']);
+          '<a href="' + point['Share'] + '">Share</a>');
+
           
 
         if (layers !== undefined && layers.length !== 1) {
