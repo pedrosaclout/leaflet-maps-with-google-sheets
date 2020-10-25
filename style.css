@@ -7,7 +7,7 @@ body {
 }
 
 #map {
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
   visibility: hidden;
 }
