@@ -87,10 +87,6 @@ form {
   text-align: center;
 }
 
-table.display {
-  width: 30vw;
-}
-
 /* Technically there are two map titles, on the left and on the right,
  * at all times. On a big screen, map title in the right column is not
  * displayed. On a mobile device, title in the right column is shown with 0
