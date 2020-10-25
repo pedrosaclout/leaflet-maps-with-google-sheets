@@ -111,9 +111,9 @@ form {
   background-color: rgba(78, 0, 0, 0.2);
 }
 
-.display{
-  width: 30vw;
-}
+div.container {
+        width: 50%;
+    }
 
 /* Technically there are two map titles, on the left and on the right,
  * at all times. On a big screen, map title in the right column is not
