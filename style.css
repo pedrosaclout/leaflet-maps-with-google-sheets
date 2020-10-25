@@ -73,6 +73,7 @@ form {
 .leaflet-popup-content img {
   width: 40%;
   margin: 5px 0 5px 0;
+  border-radius: 50%;
 }
 
 .geojson-point-marker {
@@ -233,8 +234,4 @@ span.legend-icon {
 
 .ladder form, .ladder div {
   display: block;
-}
-
-table {
-  width: 30vw;
 }
