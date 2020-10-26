@@ -282,8 +282,3 @@ span.legend-icon {
 #map{
   display: inline-block;
 }
-
-/* Overwrite datatables to be full width */
-.dataTables_scrollBody{
-  max-height: none;
-}

@@ -403,6 +403,11 @@ content:"";
 clear:both;
 height:0}
 
+/* Overwrite datatables to be full width */
+.dataTables_scrollBody{
+  max-height: none !important;
+}
+
 
 @media screen and (max-width: 767px){
 
