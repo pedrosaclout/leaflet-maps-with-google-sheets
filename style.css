@@ -275,10 +275,15 @@ span.legend-icon {
 
 .dataTables_wrapper{
   display: inline-block;
-  width: 29vw;
+  width: 30vw;
   vertical-align:top;
 }
 
 #map{
   display: inline-block;
+}
+
+/* Overwrite datatables to be full width */
+.dataTables_scrollBody{
+  max-height: none;
 }
