@@ -157,7 +157,7 @@ footer {
 
 #mobile-intro-popup p {
   margin: 10px 0 10px 0;
-  max-height: 100vh;
+  max-height: 80vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }

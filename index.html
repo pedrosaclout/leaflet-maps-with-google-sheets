@@ -61,26 +61,26 @@
 
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
   <!-- Dynamic URL Hash -->
   <script type="text/javascript" src="./scripts/leaflet-hash.js"></script>
-  
+
 </head>
 
 <body>
 
   <div class="loader"> <img src="./media/uporto_logo.jpg" alt="UPORTO logo" width="200px"> </div>
-  <div id="map"></div>
-  <table id="maptable" class="display"></table>
+  <div id="map"></div><!--
+  --><table id="maptable" class="display"></table>
   <footer> Logos and other partners </footer>
-  
+
   <script type="text/javascript">
     var map = L.map('map', {
       attributionControl: false,
       zoomControl: false,
       scrollWheelZoom: false
     }).setView([41.76,-72.69], 8); // default center is overridden by Google Sheet options and points
-    
+
     // activations of the script to creat url hashes
     var hash = new L.Hash(map);
   </script>
