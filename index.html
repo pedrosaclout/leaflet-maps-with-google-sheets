@@ -87,19 +87,9 @@
     //Open marker popup on 18 zoom level
     map.on('zoomend', function(){
     if(map.getZoom() > 6){
-      showPopup();//your function here
       map.openPopup(popup);
       console.log("Current Zoom Level =" + zoomlevel)
     } 
-    });
-    
-    //Open marker popup on 18 zoom level
-    map.on('zoomend', function() {
-    var zoomlevel = map.getZoom();
-      if (zoomlevel  >= 10){
-        map.openPopup(popup);
-      }
-      console.log("Current Zoom Level =" + zoomlevel)
     });
     
   </script>
