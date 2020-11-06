@@ -85,7 +85,13 @@
     var hash = new L.Hash(map);
     
     //Open marker popup on 18 zoom level
-
+  map.on('zoomend', function(){
+  if(map.getZoom() > 6){
+    //showPopup();//your function here
+    map.openPopup(popup);
+  } 
+});
+    
   </script>
 
   <script type="text/javascript" src="./google-doc-url.js"></script>
