@@ -92,13 +92,14 @@
   //} 
 //});
     
-   map.on('zoomend', function() {
-   var zoomlevel = map.getZoom();
-     if (zoomlevel  >= 10){
-       map.openPopup(popup);
-     }
-   console.log("Current Zoom Level =" + zoomlevel)
-   });
+    //Open marker popup on 18 zoom level
+    map.on('zoomend', function() {
+    var zoomlevel = map.getZoom();
+      if (zoomlevel  >= 10){
+        map.openPopup(popup);
+      }
+      console.log("Current Zoom Level =" + zoomlevel)
+    });
     
   </script>
 
