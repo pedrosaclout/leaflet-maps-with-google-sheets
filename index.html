@@ -81,8 +81,12 @@
       scrollWheelZoom: false
     }).setView([41.76,-72.69], 8); // default center is overridden by Google Sheet options and points
 
-    // activations of the script to creat url hashes
-    var hash = new L.Hash(map);
+    // trying ou zoomend
+    map.on('zoomend', function(){
+      if(map.getZoom() > 18){
+        showPopup();
+      } 
+    });
   </script>
 
   <script type="text/javascript" src="./google-doc-url.js"></script>
