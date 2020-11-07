@@ -130,7 +130,7 @@ $(window).on('load', function() {
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           point['Description'] +
           //'<a href="' + point['Share'] + '">Share</a>');
-          '<a href="' + 'https://pedrosaclout.github.io/mapa-alumni/#5/'+ point.Latitude + '/' + point.Longitude + '"' + '>Share*</a>';
+          '<a href="' + 'https://pedrosaclout.github.io/mapa-alumni/#5/'+ point.Latitude + '/' + point.Longitude + '"' + '>Share*</a>');
  
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
