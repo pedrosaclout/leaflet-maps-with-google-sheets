@@ -23,7 +23,7 @@ $(window).on('load', function() {
 
 
   /**
-   * Sets the map view so that all markers are visible, or
+   * Sets the view so that all markers are visible, or
    * to specified (lat, lon) and zoom if all three are specified
    */
   function centerAndZoomMap(points) {
@@ -931,7 +931,6 @@ var openallmarkers = L.layerGroup();
     var basemap = trySetting('_tileProvider', 'CartoDB.Positron');
     L.tileLayer.provider(basemap, {
       maxZoom: 18,
-      noWrap: true
     }).addTo(map);
     L.control.attribution({
       position: trySetting('_mapAttribution', 'bottomright')
