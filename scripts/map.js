@@ -931,8 +931,7 @@ var openallmarkers = L.layerGroup();
     var basemap = trySetting('_tileProvider', 'CartoDB.Positron');
     L.tileLayer.provider(basemap, {
       maxZoom: 18,
-      noWrap: true,
-      bounds: [[-90, -180],[90, 180]]
+      noWrap: true
     }).addTo(map);
     L.control.attribution({
       position: trySetting('_mapAttribution', 'bottomright')
