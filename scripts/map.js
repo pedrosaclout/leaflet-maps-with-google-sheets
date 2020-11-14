@@ -122,18 +122,18 @@ $(window).on('load', function() {
           point['Marker Color'].toLowerCase(),
           point['Icon Color']
         );
-      
+
 var openallmarkers = L.layerGroup();
-      
+
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup("<b>" + point['Name'] + '</b><br>' +
-          point['Group'] + '</b><br>' +
+          .bindPopup("<h1>" + point['Name'] + '</h1>' +
+          '<h5>' + point['Group'] + '</h5>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           point['Description'] +
           '<a href="' + point['Share'] + '">Share</a>');
           openallmarkers.addLayer(marker);
-        
+
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
         }
@@ -576,7 +576,7 @@ var openallmarkers = L.layerGroup();
 
     layer.bindPopup(info);
 
-    
+
     // Add polygon label if needed
     if (!allTextLabels[polygon]) { allTextLabels.push([]) }
 
@@ -643,7 +643,7 @@ var openallmarkers = L.layerGroup();
       var geocoder = L.Control.geocoder({
         expand: 'click',
         position: getSetting('_mapSearch'),
-        
+
         geocoder: L.Control.Geocoder.nominatim({
           geocodingQueryParams: {
             viewbox: '',  // by default, viewbox is empty
@@ -751,7 +751,7 @@ var openallmarkers = L.layerGroup();
       var gaScript = document.createElement('script');
       gaScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=' + ga);
       document.head.appendChild(gaScript);
-  
+
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -1028,7 +1028,7 @@ var openallmarkers = L.layerGroup();
                       parse(polylines)
                     )
                   } else {
-                    
+
                     // Fetch another polygons sheet
                     $.getJSON(apiUrl + spreadsheetId + '/values/' + polygonSheets.shift() + '?key=' + googleApiKey, function(data) {
                       createPolygonSettings( parse([data]) )
@@ -1043,7 +1043,7 @@ var openallmarkers = L.layerGroup();
                 fetchPolygonsSheet( polygonSheets )
 
               })
-              
+
             }
           )
 
@@ -1061,27 +1061,27 @@ var openallmarkers = L.layerGroup();
         var parse = function(s) {
           return Papa.parse(s[0], {header: true}).data
         }
-      
+
         $.when(
           $.get('./csv/Options.csv'),
           $.get('./csv/Points.csv'),
           $.get('./csv/Polylines.csv')
         ).done(function(options, points, polylines) {
-      
+
           function loadPolygonCsv(n) {
-      
+
             $.get('./csv/Polygons' + (n === 0 ? '' : n) + '.csv', function(data) {
               createPolygonSettings( parse([data]) )
               loadPolygonCsv(n+1)
-            }).fail(function() { 
-              // No more sheets to load, initialize the map  
+            }).fail(function() {
+              // No more sheets to load, initialize the map
               onMapDataLoad( parse(options), parse(points), parse(polylines) )
             })
-      
+
           }
-      
+
           loadPolygonCsv(0)
-      
+
         })
 
        }
