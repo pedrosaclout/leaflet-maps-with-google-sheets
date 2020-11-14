@@ -283,3 +283,9 @@ span.legend-icon {
 #map{
   display: inline-block;
 }
+
+.leaflet-container {
+    font-size: 11px;
+    font-family: "Open Sans";
+    line-height: 1.5;
+}
