@@ -310,10 +310,14 @@ h5 {
 
 @media screen and (max-width: 460px) {
   h5 {
-      font-size: 9px;
+      font-size: 10px;
   }
 
   .ladder {
-    width: 290px;
+    width: 335px;
+  }
+
+  .map-title {
+    width: 334px;
   }
 }
