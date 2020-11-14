@@ -4,6 +4,7 @@ body {
   margin: 0 auto;
   height: 100%;
   width: 100%;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 #map {
@@ -256,7 +257,7 @@ span.legend-icon {
 }
 
 .ladder {
-  width: 180px;
+  width: 220px;
   margin-top: 0 !important;
   overflow: hidden;
 }
