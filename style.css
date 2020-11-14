@@ -344,7 +344,7 @@ footer {
 }
 
 .fTab.active {
-    bottom: 200px;
+    bottom: 0px;
 }
 
 .fTab.active + footer {
