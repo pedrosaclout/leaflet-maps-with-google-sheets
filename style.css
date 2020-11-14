@@ -286,6 +286,11 @@ span.legend-icon {
 
 .leaflet-popup-content {
     min-width: 260px;
+    text-align: center;
+}
+
+.description{
+  text-align: left;
 }
 
 #circle{
