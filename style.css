@@ -289,9 +289,10 @@ span.legend-icon {
 }
 
 #circle{
-  /*border-radius: 50%;*/
+  border-radius: 50%;
   object-fit: cover;
-  width: 30%;
+  width: 80px;
+  height: 80px;
   margin: 5px 0 5px 0;
 }
 
