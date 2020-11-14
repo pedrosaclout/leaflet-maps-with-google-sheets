@@ -257,7 +257,7 @@ span.legend-icon {
 }
 
 .ladder {
-  width: 220px;
+  width: 351px;
   margin-top: 0 !important;
   overflow: hidden;
 }
@@ -294,9 +294,9 @@ span.legend-icon {
     min-width: 260px;
 }
 
-b {
+h1 {
     font-family: "PT serif", serif;
-    font-size: 15px;
+    font-size: 14px;
     color: #ac0404;
 }
 
@@ -305,4 +305,15 @@ h5 {
     font-size: 11px;
     font-weight: normal;
     display: inline-block;
+}
+
+
+@media screen and (max-width: 460px) {
+  h5 {
+      font-size: 9px;
+  }
+
+  .ladder {
+    width: 290px;
+  }
 }
