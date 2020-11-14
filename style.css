@@ -331,7 +331,7 @@ footer {
     padding-bottom: 15px;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 200px;
     padding: 1em;
     background-color: red;
     width: 100vw;
