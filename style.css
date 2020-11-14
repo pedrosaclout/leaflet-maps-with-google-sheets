@@ -314,10 +314,18 @@ h5 {
   }
 
   .ladder {
-    width: 335px;
+    width: 323px;
   }
 
   .map-title {
     width: 334px;
+  }
+
+  .leaflet-touch .leaflet-control-geocoder {
+    margin-top: 365px;
+}
+
+  control.leaflet-control-custom {
+      width: 322px;
   }
 }
