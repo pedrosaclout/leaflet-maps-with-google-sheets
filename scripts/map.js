@@ -127,11 +127,11 @@ var openallmarkers = L.layerGroup();
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup('<h1>' + point['Name'] + '</h1>' +
-          '<h5>' + point['Group'] + '</h5>' +
-          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
+          .bindPopup('<h2>' + point['Name'] + '</h2>' +
+          '<h3>' + point['Group'] + '</h3>' +
+          (point['Image'] ? ('<img src="' + point['Image'] + '"') : '') +
           '<div class="description"> <p> ' + point['Description'] + ' </p></div>' +
-          '<a href="' + point['Share'] + '">Share</a>');
+          '<h4> <a href="' + point['Share'] + '">Share</a> </h4>');
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
@@ -766,7 +766,7 @@ var openallmarkers = L.layerGroup();
     var dispTitle = getSetting('_mapTitleDisplay');
 
     if (dispTitle !== 'off') {
-      var title = '<h3 class="pointer">' + getSetting('_mapTitle') + '</h3>';
+      var title = '<h1 class="pointer">' + getSetting('_mapTitle') + '</h1>';
       var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
       if (dispTitle == 'topleft') {
@@ -776,7 +776,7 @@ var openallmarkers = L.layerGroup();
         $('.div-center').append('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + title + subtitle + '</div>');
       }
 
-      $('.map-title h3').click(function() { location.reload(); });
+      $('.map-title h1').click(function() { location.reload(); });
     }
   }
 
@@ -845,7 +845,7 @@ var openallmarkers = L.layerGroup();
 
               // Add map title if set to be displayed in polylines legend
               if (getSetting('_mapTitleDisplay') == 'in polylines legend') {
-                var title = '<h3>' + getSetting('_mapTitle') + '</h3>';
+                var title = '<h1>' + getSetting('_mapTitle') + '</h1>';
                 var subtitle = '<h6>' + getSetting('_mapSubtitle') + '</h6>';
                 $('#polylines-legend').prepend(title + subtitle);
               }
