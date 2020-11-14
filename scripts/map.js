@@ -127,7 +127,7 @@ var openallmarkers = L.layerGroup();
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup("<h1>" + point['Name'] + '</h1>' +
+          .bindPopup('<h1>' + point['Name'] + '</h1>' +
           '<h5>' + point['Group'] + '</h5>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           point['Description'] +
