@@ -318,31 +318,34 @@ footer {
     position: absolute;
     left: 0;
     right: 0;
-    width: 100vw;
-    bottom: 300px;
-    height: 300px;
-    background-color: black;
+    bottom: 0;
+    max-height: 0px;
+    height: 200px;
+    background-color: gray;
     -webkit-transition: max-height 0.5s;
     transition: max-height 0.5s;
 }
 
 .fTab {
+    text-align:center;
+    padding-bottom: 15px;
     position: absolute;
     left: 0;
     bottom: 0;
-    padding: 2em;
-    background-color: black;
+    padding: 1em;
+    background-color: red;
+    width: 100vw;
 
     -webkit-transition: bottom 0.5s;
     transition: bottom 0.5s;
 }
 
 .fTab.active {
-    bottom: 300px;
+    bottom: 200px;
 }
 
 .fTab.active + footer {
-    max-height: 300px;
+    max-height: 200px;
 }
 
 @media screen and (max-width: 460px) {
