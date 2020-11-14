@@ -152,7 +152,7 @@ footer {
   opacity: 0.9;
   border: 5px #ddd solid;
   border-radius: 5px;
-  font-family: "Helvetica Neue", Arial;
+  font-family: "Open Sans", Arial;
 }
 
 #mobile-intro-popup p {
@@ -220,7 +220,7 @@ div.dataTables_scrollHead {
 }
 
 .dataTable * {
-  font-family: "Helvetica Neue", Arial;
+  font-family: "Open Sans", Arial;
   border: 0 !important;
 }
 
