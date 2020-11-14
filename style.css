@@ -289,3 +289,13 @@ span.legend-icon {
     font-family: "Open Sans";
     line-height: 1.5;
 }
+
+.leaflet-popup-content {
+    min-width: 260px;
+}
+
+b {
+    font-family: "PT serif", serif;
+    font-size: 15px;
+    color: red;
+}
