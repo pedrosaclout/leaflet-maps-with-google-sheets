@@ -130,7 +130,7 @@ var openallmarkers = L.layerGroup();
           .bindPopup('<h1>' + point['Name'] + '</h1>' +
           '<h5>' + point['Group'] + '</h5>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
-          point['Description'] +
+          '<div class="description"> <p> ' + point['Description'] + ' </p></div>' +
           '<a href="' + point['Share'] + '">Share</a>');
           openallmarkers.addLayer(marker);
 
