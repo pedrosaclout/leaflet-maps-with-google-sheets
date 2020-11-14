@@ -267,6 +267,12 @@ span.legend-icon {
   display: block;
 }
 
+/* DISABLE LEAFLET FOOTER */
+
+.leaflet-control-attribution.leaflet-control {
+    display: none;
+}
+
 /* ADDED to align table to the left */
 
 .dataTables_wrapper{
