@@ -325,7 +325,7 @@ h5 {
     margin-top: 365px;
 }
 
-  control.leaflet-control-custom {
+  .map-title .leaflet-bar .leaflet-control .leaflet-control-custom {
       width: 322px;
   }
 }
