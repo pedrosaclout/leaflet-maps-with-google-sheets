@@ -129,7 +129,7 @@ var openallmarkers = L.layerGroup();
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup('<h2>' + point['Name'] + '</h2>' +
           '<h3>' + point['Group'] + '</h3>' +
-          (point['Image'] ? ('<img src="' + point['Image'] + '"') : '') +
+          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           '<div class="description"> <p> ' + point['Description'] + ' </p></div>' +
           '<h4> <a href="' + point['Share'] + '">Share</a> </h4>');
           openallmarkers.addLayer(marker);
