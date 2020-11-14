@@ -313,6 +313,37 @@ h5 {
     display: inline-block;
 }
 
+/* OPENING FOOTER */
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 0px;
+    height: 300px;
+    background-color: black;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+}
+
+.fTab {
+     position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1em;
+    background-color: gray;
+
+    -webkit-transition: bottom 0.5s;
+    transition: bottom 0.5s;
+}
+
+.fTab.active {
+    bottom: 300px;
+}
+
+.fTab.active + footer {
+    max-height: 300px;
+}
 
 @media screen and (max-width: 460px) {
   h5 {

@@ -76,7 +76,16 @@
   <div class="loader"> <img src="./media/uporto_logo.jpg" alt="UPORTO logo" width="200px"> </div>
   <div id="map"></div><!--
   --><table id="maptable" class="display"></table>
-  <footer> Logos and other partners </footer>
+  <span class="fTab">Open Footer</span>
+  	<footer>Logos and other partners</footer>
+
+  <script>
+  jQuery(function($){
+  $('.fTab').on('click', function(){
+      $(this).toggleClass('active');
+  });
+})
+  </script>
 
   <script type="text/javascript">
     var map = L.map('map', {
