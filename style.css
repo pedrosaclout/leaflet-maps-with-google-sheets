@@ -5,6 +5,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Open Sans", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 #map {
@@ -334,10 +335,12 @@ footer {
     bottom: 200px;
     padding: 1em;
     background-color: red;
-    width: 100vw;
+    width: 100%;
 
     -webkit-transition: bottom 0.5s;
     transition: bottom 0.5s;
+
+    z-index: 999;
 }
 
 .fTab.active {
