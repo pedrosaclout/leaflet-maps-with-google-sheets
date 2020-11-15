@@ -20,6 +20,15 @@ h1 {
   font-size: 1.5em;
 }
 
+h2 {
+    font-size: 16px;
+    color: black;
+}
+
+h3 {
+  font-weight: normal;
+}
+
 h4 a {
   color: #b92b2e;
   text-decoration: none;
@@ -28,9 +37,10 @@ h4 a {
 }
 
 h5 {
-  margin: 0;
-  font-size: 1.25em;
-  font-weight: normal;
+    margin: 0;
+    font-size: 11px;
+    font-weight: normal;
+    display: inline-block;
 }
 
 h6 {
@@ -316,17 +326,7 @@ span.legend-icon {
   margin: 5px 0 5px 0;
 }
 
-h2 {
-    font-size: 14px;
-    color: black;
-}
 
-h5 {
-    margin: 0;
-    font-size: 11px;
-    font-weight: normal;
-    display: inline-block;
-}
 
 /* OPENING FOOTER */
 footer {
