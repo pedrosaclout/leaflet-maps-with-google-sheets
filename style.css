@@ -16,18 +16,19 @@ body {
 }
 
 h1 {
-  margin: 0;
   font-size: 1.5em;
 }
 
 h2 {
     font-size: 16px;
     color: black;
-    margin: 0;
 }
 
 h3 {
   font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
@@ -39,14 +40,12 @@ h3 {
 }
 
 h5 {
-    margin: 0;
     font-size: 11px;
     font-weight: normal;
     display: inline-block;
 }
 
 h6 {
-  margin: 0;
   font-size: 1.2em;
 }
 
