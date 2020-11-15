@@ -359,6 +359,14 @@ footer {
     max-height: 200px;
 }
 
+.topbar{
+  background-color: lightgrey;
+}
+
+.navbar{
+  background-color: black;
+}
+
 @media screen and (max-width: 460px) {
   h5 {
       font-size: 10px;
