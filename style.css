@@ -343,12 +343,12 @@ footer {
     padding-top: 10px;
     background-color: black;
     width: 100%;
-    cursor: pointer;
 
     -webkit-transition: bottom 0.5s;
     transition: bottom 0.5s;
 
     z-index: 1000;
+    cursor: pointer;
 }
 
 .fTab.active {
