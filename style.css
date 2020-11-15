@@ -361,10 +361,14 @@ footer {
 
 .topbar{
   background-color: lightgrey;
+  color: black;
+  height: 30px;
 }
 
 .navbar{
   background-color: black;
+  color: white;
+  height: 30px;
 }
 
 @media screen and (max-width: 460px) {
