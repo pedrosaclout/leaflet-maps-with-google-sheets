@@ -339,8 +339,9 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0px;
-    padding: 7px;
-    background-color: red;
+    padding: 5px;
+    padding-top: 10px;
+    background-color: black;
     width: 100%;
 
     -webkit-transition: bottom 0.5s;
