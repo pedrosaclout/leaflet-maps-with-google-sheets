@@ -128,13 +128,14 @@ var openallmarkers = L.layerGroup();
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup(
+          '<div class="popup_header">' +
           (point['Image'] ? ('<img src="' + point['Image'] + '" alt="profile picture" id="circle"><br>') : '') +
           '<h2>' + point['Name'] + '</h2>' +
-          '<h3>' + point['Group'] + '</h3>' +
-          '<div class="description"> <p> ' + point['Description'] + ' </p></div>' +
+          '<h3>' + point['Group'] + '</h3></div>' +
+          '<p> ' + point['Description'] + ' </p>' +
           '<h4> <a href="' + point['Website'] + '">Website</a> </h4>' +
           '<h4> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>' +
-          '<h4 class="material-icons"> <a href="' + point['Share'] + '">share</a> </h4>'); 
+          '<h4 class="material-icons"> <a href="' + point['Share'] + '">share</a> </h4>');
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
