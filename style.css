@@ -331,6 +331,7 @@ footer {
     background-color: gray;
     -webkit-transition: max-height 0.5s;
     transition: max-height 0.5s;
+    overflow: scroll;
 }
 
 .fTab {
