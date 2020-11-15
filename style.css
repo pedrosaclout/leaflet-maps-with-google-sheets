@@ -312,7 +312,7 @@ span.legend-icon {
 
 .leaflet-popup-content {
     min-width: 260px;
-    text-align: center;
+    text-align: left;
 }
 
 .popup_header{
