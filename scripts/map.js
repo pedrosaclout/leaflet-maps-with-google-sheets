@@ -133,9 +133,9 @@ var openallmarkers = L.layerGroup();
           '<h2>' + point['Name'] + '</h2>' +
           '<h3>' + point['Group'] + '</h3></div>' +
           '<p> ' + point['Description'] + ' </p>' +
-          '<h4> <a href="' + point['Website'] + '">Website</a> </h4>' +
-          '<h4> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>' +
-          '<h4 class="material-icons"> <a href="' + point['Share'] + '">share</a> </h4>');
+          '<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>' +
+          '<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>' +
+          '<div class="material-icons share"> <a href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
