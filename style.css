@@ -271,7 +271,7 @@ select {
 }
 
 span.legend-arrow {
-  color: rgb(172, 4, 4);
+  color: rgb(172, 4, 4, 0.3);
   position: absolute;
   right: 8px;
   top: 5px;
