@@ -771,7 +771,7 @@ var openallmarkers = L.layerGroup();
 
     if (dispTitle !== 'off') {
       var title = '<h1 class="pointer">' + getSetting('_mapTitle') + '</h1>';
-      var subtitle = '';
+      var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
       if (dispTitle == 'topleft') {
         $('div.leaflet-top').prepend('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + title + subtitle + '</div>');
