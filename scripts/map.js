@@ -93,6 +93,7 @@ $(window).on('load', function() {
     return layers;
   }
 
+
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
@@ -125,6 +126,16 @@ $(window).on('load', function() {
 
 var openallmarkers = L.layerGroup();
 
+      function setClipboard(value) {
+          var tempInput = document.createElement("input");
+          tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+          tempInput.value = value;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempInput);
+      }
+
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup(
@@ -135,7 +146,7 @@ var openallmarkers = L.layerGroup();
           '<p> ' + point['Description'] + ' </p>' +
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
-          '<button onclick="setClipboard(window.location.href)">Set Clipboard</button>' +
+          '<button onclick="setClipboard(window.location.href)">Copy</button>' +
           '<div class="material-icons share"> <a href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
