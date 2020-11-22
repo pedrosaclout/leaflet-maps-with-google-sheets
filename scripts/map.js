@@ -770,7 +770,7 @@ var openallmarkers = L.layerGroup();
     var dispTitle = getSetting('_mapTitleDisplay');
 
     if (dispTitle !== 'off') {
-      var title = '<h1 class="pointer">' + getSetting('_mapTitle') + '</h1>';
+      var title = '<h1 class="pointer minimize lll">' + getSetting('_mapTitle') + '</h1>';
       var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
       if (dispTitle == 'topleft') {
