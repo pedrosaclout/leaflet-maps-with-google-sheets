@@ -393,6 +393,10 @@ footer {
   height: 30px;
 }
 
+.map-title.leaflet-bar.leaflet-control.leaflet-control-custom {
+    width: 351px;
+}
+
 @media screen and (max-width: 460px) {
   h5 {
       font-size: 10px;
