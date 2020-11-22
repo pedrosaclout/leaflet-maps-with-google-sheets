@@ -139,6 +139,17 @@ var openallmarkers = L.layerGroup();
           '<div class="material-icons share"> <a href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
+          var $temp = $("<input>");
+          var $url = $(location).attr('href');
+
+        $('.clipboard').on('click', function() {
+          $("body").append($temp);
+          $temp.val($url).select();
+          document.execCommand("copy");
+          $temp.remove();
+          alert("URL copied!");
+        })
+
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
         }
@@ -1124,17 +1135,5 @@ var openallmarkers = L.layerGroup();
       }
       return val;
   }
-
-  var $temp = $("<input>");
-var $url = $(location).attr('href');
-
-$('.clipboard').on('click', function() {
-  $("body").append($temp);
-  $temp.val($url).select();
-  document.execCommand("copy");
-  $temp.remove();
-  alert("URL copied!");
-})
-
 
 });
