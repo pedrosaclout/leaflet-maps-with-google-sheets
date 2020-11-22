@@ -429,7 +429,7 @@ a.googleform:visited{
   }
 
   .ladder {
-    width: 323px;
+    width: 77vw;
   }
 
   .map-title {
@@ -437,8 +437,14 @@ a.googleform:visited{
   }
 
   .leaflet-touch .leaflet-control-geocoder {
-    margin-top: 365px;
+    margin-top: 10px;
 }
+
+.leaflet-right .leaflet-control {
+    margin-right: 6px;
+}
+
+
 
   .map-title.leaflet-bar.leaflet-control.leaflet-control-custom {
       width: 322px;
