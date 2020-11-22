@@ -399,15 +399,15 @@ footer {
 
 .alumniform {
     text-align: center;
-    font-family: "Open Sans", Arial, sans-serif;
-    color: white;
+    font-family: Bitter, "Open Sans", Arial, sans-serif;
     padding: 5px;
     background-color: black;
 }
 
 a.googleform{
   text-decoration: none;
-  color: white;
+  color: #c3c3c3;
+  font-size: 0.85rem;
 }
 
 a.googleform:hover{
@@ -418,7 +418,7 @@ a.googleform:hover{
 
 a.googleform:visited{
   text-decoration: none;
-  color: white;
+  color: #c3c3c3;
 }
 
 
