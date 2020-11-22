@@ -402,6 +402,7 @@ footer {
     font-family: Bitter, "PT Serif", Arial, sans-serif;
     padding: 5px;
     background-color: black;
+    text-transform: uppercase;
 }
 
 a.googleform{
@@ -412,7 +413,7 @@ a.googleform{
 
 a.googleform:hover{
   text-decoration: none;
-  color: red;
+  color: white;
   cursor: pointer;
 }
 
