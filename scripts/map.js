@@ -21,6 +21,15 @@ $(window).on('load', function() {
     });
   }
 
+  function setClipboard(value) {
+      var tempInput = document.createElement("input");
+      tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+      tempInput.value = value;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+  }
 
   /**
    * Sets the view so that all markers are visible, or
@@ -125,16 +134,6 @@ $(window).on('load', function() {
         );
 
 var openallmarkers = L.layerGroup();
-
-      function setClipboard(value) {
-          var tempInput = document.createElement("input");
-          tempInput.style = "position: absolute; left: -1000px; top: -1000px";
-          tempInput.value = value;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand("copy");
-          document.body.removeChild(tempInput);
-      }
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
