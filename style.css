@@ -438,6 +438,7 @@ a.googleform:visited{
 
   .leaflet-touch .leaflet-control-geocoder {
     margin-top: 10px;
+    display: none;
 }
 
 .leaflet-right .leaflet-control {
