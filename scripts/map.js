@@ -706,7 +706,7 @@ var openallmarkers = L.layerGroup();
 
     function showMap() {
       if (completePoints && completePolylines && completePolygons) {
-        $('.ladder h6').append('<span class="legend-arrow"><i class="fa fa-chevron-up"></i></span>');
+        $('.ladder h6').append('<span class="legend-arrow"><i class="fa fa-chevron-down"></i></span>');
         $('.ladder h6').addClass('minimize');
 
         for (i in allPolygonLegends) {
