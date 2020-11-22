@@ -184,7 +184,7 @@ var openallmarkers = L.layerGroup();
       }
     }
 
-    $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
+    $('#points-legend').prepend('<h6 class="pointer minimize">' + getSetting('_pointsLegendTitle') + '</h6>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
@@ -706,7 +706,7 @@ var openallmarkers = L.layerGroup();
 
     function showMap() {
       if (completePoints && completePolylines && completePolygons) {
-        $('.ladder h6').append('<span class="legend-arrow"><i class="fa fa-chevron-down minimize"></i></span>');
+        $('.ladder h6').append('<span class="legend-arrow"><i class="fa fa-chevron-down"></i></span>');
         $('.ladder h6').addClass('minimize');
 
         for (i in allPolygonLegends) {
