@@ -184,7 +184,7 @@ var openallmarkers = L.layerGroup();
       }
     }
 
-    $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
+    $('#points-legend').prepend('<h6 class="pointer minimize lll">' + getSetting('_pointsLegendTitle') + '</h6>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
@@ -770,7 +770,7 @@ var openallmarkers = L.layerGroup();
     var dispTitle = getSetting('_mapTitleDisplay');
 
     if (dispTitle !== 'off') {
-      var title = '<h1 class="pointer minimize lll">' + getSetting('_mapTitle') + '</h1>';
+      var title = '<h1 class="pointer">' + getSetting('_mapTitle') + '</h1>';
       var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
       if (dispTitle == 'topleft') {
