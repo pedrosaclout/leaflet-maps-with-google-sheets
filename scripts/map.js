@@ -707,7 +707,7 @@ var openallmarkers = L.layerGroup();
     function showMap() {
       if (completePoints && completePolylines && completePolygons) {
         $('.ladder h6').append('<span class="legend-arrow"><i class="fa fa-chevron-down"></i></span>');
-        //$('.ladder h6').addClass('minimize');
+        //$('.ladder h6').addClass('minimize'); //collapses the "faculdades" layers menu
 
         for (i in allPolygonLegends) {
           if (getPolygonSetting(i, '_polygonsLegendIcon') != '') {
