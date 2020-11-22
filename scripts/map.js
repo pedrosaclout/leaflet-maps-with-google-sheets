@@ -135,20 +135,9 @@ var openallmarkers = L.layerGroup();
           '<p> ' + point['Description'] + ' </p>' +
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
-          '<button class="clipboard">Click me to copy current Url</button>' +
+          '<button onclick="setClipboard(window.location.href)">Set Clipboard</button>' +
           '<div class="material-icons share"> <a href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
-
-          var $temp = $("<input>");
-          var $url = $(location).attr('href');
-
-        $('.clipboard').on('click', function() {
-          $("body").append($temp);
-          $temp.val($url).select();
-          document.execCommand("copy");
-          $temp.remove();
-          alert("URL copied!");
-        })
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -1134,6 +1123,19 @@ var openallmarkers = L.layerGroup();
           val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
       }
       return val;
+  }
+
+  var $temp = $("<input>");
+  var $url = $(location).attr('href');
+
+  function setClipboard(value) {
+      var tempInput = document.createElement("input");
+      tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+      tempInput.value = value;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
   }
 
 });
