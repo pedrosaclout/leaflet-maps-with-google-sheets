@@ -445,10 +445,12 @@ a.googleform:visited{
     margin-right: 6px;
 }
 
-
+a.googleform {
+    font-size: 11px;
+}
 
   .map-title.leaflet-bar.leaflet-control.leaflet-control-custom {
-      width: 322px;
+      width: 89vw;
   }
 
 }
