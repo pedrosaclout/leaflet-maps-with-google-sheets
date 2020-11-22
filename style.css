@@ -397,6 +397,31 @@ footer {
     width: 351px;
 }
 
+.alumniform {
+    text-align: center;
+    font-family: Bitter, "PT Serif", Arial, sans-serif;
+    padding: 5px;
+    background-color: black;
+}
+
+a.googleform{
+  text-decoration: none;
+  color: #c3c3c3;
+  font-size: 0.85rem;
+}
+
+a.googleform:hover{
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
+
+a.googleform:visited{
+  text-decoration: none;
+  color: #c3c3c3;
+}
+
+
 @media screen and (max-width: 460px) {
   h5 {
       font-size: 10px;
