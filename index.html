@@ -85,6 +85,12 @@
 
   <div class="loader"> <img src="./media/uporto_logo.jpg" alt="UPORTO logo" width="200px"> </div>
   <div id="map"></div><!--
+  --><div class="links">
+      <ul>
+        <li class="social-share facebook">Share on Facebook</li>
+        <li class="social-share linkedin">Share on LinkedIn</li>
+      </ul>
+    </div><!--
   --><table id="maptable" class="display"></table>
   <span class="fTab"><img src="./media/up_logo.png" alt="UPORTO logo" width="100px"></span>
   	<footer>
@@ -99,6 +105,36 @@
         $(this).toggleClass('active');
     });
   })
+  </script>
+
+  <script>
+  // SHARE LINK FACEBOOK AND LINKEDIN
+  setShareLinks();
+
+  function socialWindow(url) {
+    var left = (screen.width - 570) / 2;
+    var top = (screen.height - 570) / 2;
+    var params = "menubar=no,toolbar=no,status=no,width=570,height=570,top=" + top + ",left=" + left;
+    // Setting 'params' to an empty string will launch
+    // content in a new tab or window rather than a pop-up.
+    // params = "";
+    window.open(url,"NewWindow",params);
+  }
+
+  function setShareLinks() {
+    var pageUrl = encodeURIComponent(document.URL);
+    var tweet = encodeURIComponent($("meta[property='og:description']").attr("content"));
+
+    $(".social-share.facebook").on("click", function() {
+      url = "https://www.facebook.com/sharer.php?u=" + pageUrl;
+      socialWindow(url);
+    });
+
+    $(".social-share.linkedin").on("click", function() {
+      url = "https://www.linkedin.com/shareArticle?mini=true&url=" + pageUrl;
+      socialWindow(url);
+    })
+  }
   </script>
 
   <script type="text/javascript">

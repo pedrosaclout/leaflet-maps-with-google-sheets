@@ -422,6 +422,12 @@ a.googleform:visited{
   color: #c3c3c3;
 }
 
+.links {
+    position: fixed;
+    bottom: 300px;
+    left: 15px;
+    z-index: 1000;
+}
 
 @media screen and (max-width: 460px) {
   h5 {
