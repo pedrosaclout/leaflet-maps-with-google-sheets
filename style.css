@@ -429,6 +429,12 @@ a.googleform:visited{
     z-index: 1000;
 }
 
+.links li:hover {
+  text-decoration: none;
+  color: #c3c3c3;
+  cursor: pointer; 
+}
+
 @media screen and (max-width: 460px) {
   h5 {
       font-size: 10px;
