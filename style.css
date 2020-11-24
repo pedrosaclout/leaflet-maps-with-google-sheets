@@ -432,7 +432,48 @@ a.googleform:visited{
 .links li:hover {
   text-decoration: none;
   color: #c3c3c3;
-  cursor: pointer; 
+  cursor: pointer;
+}
+
+ul {
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.links {
+    position: fixed;
+    bottom: 50px;
+    left: 15px;
+    z-index: 1000;
+}
+
+.social-share.facebook {
+    display: block;
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+    background-color: white;
+    padding: 5px;
+    font-family: Open Sans;
+    font-weight: 600;
+    color: #b92b2e;
+    border-radius: 6px;
+    font-size: 11px;
+    margin-bottom: 5px;
+    width: 101px;
+}
+
+.social-share.linkedin {
+    display: block;
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+    background-color: white;
+    padding: 5px;
+    font-family: Open Sans;
+    font-weight: 600;
+    color: #b92b2e;
+    border-radius: 6px;
+    font-size: 11px;
+    width: 101px;
 }
 
 @media screen and (max-width: 460px) {
