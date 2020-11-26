@@ -137,7 +137,7 @@ var openallmarkers = L.layerGroup();
           '<p> ' + point['Description'] + ' </p>' +
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
-          '<input type="text" value="' + point['Share'] + '" id="myInput"> <button>' +
+          '<div class="input"> <input type="text" value="' + point['Share'] + '" id="myInput"></div>' +
           '<div class="material-icons share"> <a class="personalurl" href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
