@@ -49,10 +49,12 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 10px;
   right: 10px;
   font-size: 20px !important;
+  width: 20px;
 }
 
 .share:hover + .input{
   display: block;
+  font-size: 40px !important;
 }
 
 .input{
