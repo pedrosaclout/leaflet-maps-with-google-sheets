@@ -51,10 +51,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px !important;
 }
 
-.share:hover{
-  visibility: hidden;
+.share:hover + input{
+  display: block;
 }
 
+.input{
+  display: none;
+}
 
 h5 {
     font-size: 11px;
