@@ -70,6 +70,16 @@ $(window).on('load', function() {
   }
 
 
+  function setClipboard(value) {
+      var tempInput = document.createElement("input");
+      tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+      tempInput.value = value;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+  }
+  
   /**
    * Given a collection of points, determines the layers based on 'Group'
    * column in the spreadsheet.
@@ -145,7 +155,7 @@ var openallmarkers = L.layerGroup();
           '<p> ' + point['Description'] + ' </p>' +
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
-          '<button onclick="setClipboard(window.location.href)">Copy</button>' +
+          '<button onclick="setClipboard(' + point['Share'] + ')">Copy</button>' +
           '<div class="material-icons share"> <a class="personalurl" href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
