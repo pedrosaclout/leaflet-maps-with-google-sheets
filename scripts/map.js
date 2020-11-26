@@ -98,15 +98,6 @@ $(window).on('load', function() {
    * Assigns points to appropriate layers and clusters them if needed
    */
   function mapPoints(points, layers) {
-    function copyFunction() {
-      var copyText = document.getElementById("myInput");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999)
-      document.execCommand("copy");
-      alert("Copied the text: " + copyText.value);
-    }
-
-
     var markerArray = [];
     // check that map has loaded before adding points to it?
     for (var i in points) {
