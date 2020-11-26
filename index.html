@@ -156,7 +156,7 @@
   }
 
   function setPersonalShareLinks() {
-    var pageUrl = document.getElementById('personalurl');
+    var pageUrl = document.getElementById('personalurl').href;
     console.log(pageUrl);
     var tweet = encodeURIComponent($("meta[property='og:description']").attr("content"));
 
