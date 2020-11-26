@@ -61,7 +61,13 @@ $(window).on('load', function() {
     map.setView(center, zoom);
   }
 
-
+  function copyFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+  }
   /**
    * Given a collection of points, determines the layers based on 'Group'
    * column in the spreadsheet.
@@ -136,7 +142,7 @@ var openallmarkers = L.layerGroup();
           '<p> ' + point['Description'] + ' </p>' +
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
-          '<input type="text" value="' + point['Share'] + '" id="myInput"> <button>Copy text</button>' +
+          '<input type="text" value="' + point['Share'] + '" id="myInput"> <button onclick="copyFunction()"> +
           '<div class="material-icons share"> <a class="personalurl" href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
