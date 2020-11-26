@@ -136,7 +136,7 @@ var openallmarkers = L.layerGroup();
           '<p> ' + point['Description'] + ' </p>' +
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
-          '<button onclick="setClipboard(' + point['Share'] + ')">Copy</button>' +
+          '<input type="text" value="Hello World" id="myInput"> <button>Copy text</button>' +
           '<div class="material-icons share"> <a class="personalurl" href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
