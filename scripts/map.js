@@ -98,6 +98,13 @@ $(window).on('load', function() {
    * Assigns points to appropriate layers and clusters them if needed
    */
   function mapPoints(points, layers) {
+    function copyFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    }
 
 
     var markerArray = [];
@@ -130,15 +137,6 @@ var openallmarkers = L.layerGroup();
 
 
       if (point.Latitude !== '' && point.Longitude !== '') {
-        function setClipboard(value) {
-            var tempInput = document.createElement("input");
-            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
-            tempInput.value = value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-        }
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup(
           '<div class="popup_header">' +
