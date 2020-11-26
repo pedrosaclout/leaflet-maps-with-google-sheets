@@ -146,7 +146,7 @@ var openallmarkers = L.layerGroup();
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
           '<button onclick="setClipboard(window.location.href)">Copy</button>' +
-          '<div class="material-icons share"> <a data-toggle="tooltip" title="Copy to Clipboard" class="personalurl" href="' + point['Share'] + '">share</a> </div>');
+          '<div class="material-icons share"> <a class="personalurl" href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {

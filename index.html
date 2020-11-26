@@ -141,22 +141,6 @@
   }
   </script>
 
-  <script>
-  $('.personalurl').click(function (e) {
-   e.preventDefault();
-   var copyText = $(this).attr('href');
-
-   document.addEventListener('copy', function(e) {
-      e.clipboardData.setData('text/plain', copyText);
-      e.preventDefault();
-   }, true);
-
-   document.execCommand('copy');
-   console.log('copied text : ', copyText);
-   alert('copied text: ' + copyText);
- });
-  </script>
-
   <script type="text/javascript">
     var map = L.map('map', {
       minZoom: 3,
