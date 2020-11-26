@@ -99,13 +99,7 @@ $(window).on('load', function() {
    */
   function mapPoints(points, layers) {
 
-    function copyFunction() {
-      var copyText = document.getElementById("myInput");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999)
-      document.execCommand("copy");
-      alert("Copied the text: " + copyText.value);
-    }
+
     var markerArray = [];
     // check that map has loaded before adding points to it?
     for (var i in points) {
@@ -136,6 +130,13 @@ var openallmarkers = L.layerGroup();
 
 
       if (point.Latitude !== '' && point.Longitude !== '') {
+        function copyFunction() {
+          var copyText = document.getElementById("myInput");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999)
+          document.execCommand("copy");
+          alert("Copied the text: " + copyText.value);
+        }
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup(
           '<div class="popup_header">' +
