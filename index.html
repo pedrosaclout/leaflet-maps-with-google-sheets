@@ -141,6 +141,14 @@
   }
   </script>
 
+  <script>
+  new Clipboard('.personalurl', {
+    text: function (trigger) {
+        return trigger.getAttribute('href');
+    }
+  });
+  </script>
+
   <script type="text/javascript">
     var map = L.map('map', {
       minZoom: 3,
