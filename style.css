@@ -47,17 +47,16 @@ h1, h2, h3, h4, h5, h6 {
 .share {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 130px;
   font-size: 20px !important;
-  width: 50px;
-}
-
-.share:hover + .input{
-  display: block;
+  width: 20px;
 }
 
 .input{
-  display: none;
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 
 h5 {
