@@ -141,32 +141,6 @@
   }
   </script>
 
-  <script>
-  // PERSONAL SHARE LINK
-  setShareLinks();
-
-  function socialWindow(builturl) {
-    var left = (screen.width - 570) / 2;
-    var top = (screen.height - 570) / 2;
-    var params = "menubar=no,toolbar=no,status=no,width=570,height=570,top=" + top + ",left=" + left;
-    // Setting 'params' to an empty string will launch
-    // content in a new tab or window rather than a pop-up.
-    // params = "";
-    window.open(builturl,"NewWindow",params);
-  }
-
-  function setShareLinks() {
-    var pageUrl = document..getElementsByClassName('personalurl').href;
-    console.log("Personal sharing link:" pageUrl);
-    var tweet = encodeURIComponent($("meta[property='og:description']").attr("content"));
-
-    $(".social-share.linkedin").on("click", function() {
-      builturl = "https://www.linkedin.com/shareArticle?mini=true&url=" + pageUrl;
-      socialWindow(builturl);
-    })
-  }
-  </script>
-
   <script type="text/javascript">
     var map = L.map('map', {
       minZoom: 3,
