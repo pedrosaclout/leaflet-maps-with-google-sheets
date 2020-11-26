@@ -130,12 +130,14 @@ var openallmarkers = L.layerGroup();
 
 
       if (point.Latitude !== '' && point.Longitude !== '') {
-        function copyFunction() {
-          var copyText = document.getElementById("myInput");
-          copyText.select();
-          copyText.setSelectionRange(0, 99999)
-          document.execCommand("copy");
-          alert("Copied the text: " + copyText.value);
+        function setClipboard(value) {
+            var tempInput = document.createElement("input");
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
         }
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup(
@@ -146,7 +148,7 @@ var openallmarkers = L.layerGroup();
           '<p> ' + point['Description'] + ' </p>' +
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
-          '<input type="text" value="' + point['Share'] + '" id="myInput"> <button onclick="copyFunction()">' +
+          '<button onclick="setClipboard(' + point['Share'] + '">Set Clipboard</button>' +
           '<div class="material-icons share"> <a class="personalurl" href="' + point['Share'] + '">share</a> </div>');
           openallmarkers.addLayer(marker);
 
