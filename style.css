@@ -489,6 +489,14 @@ ul {
   float: right;
 }
 
+.btn.personalsharebutton {
+    border: 0;
+    color: #ac0404;
+    padding: 0;
+    background-color: white;
+    cursor: pointer;
+}
+
 
 
 .imageheaderbig{
