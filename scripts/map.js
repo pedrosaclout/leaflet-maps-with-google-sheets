@@ -138,7 +138,7 @@ var openallmarkers = L.layerGroup();
           (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '">Website</a> </h4>') : '') +
           (point['LinkedIn'] ? ('<h4 id="linkedin"> <a href="' + point['LinkedIn'] + '">LinkedIn</a> </h4>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
-          '<button mat-button class="btn" data-clipboard-target="#' + point['divid'] + '"><mat-icon>mic</mat-icon></button>');
+          '<button class="btn" data-clipboard-target="#' + point['divid'] + '">Share</button>');
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
