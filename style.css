@@ -485,6 +485,12 @@ ul {
     width: 101px;
 }
 
+.btn.personalsharebutton{
+  float: right;
+}
+
+
+
 .imageheaderbig{
   width: 100%;
 }
