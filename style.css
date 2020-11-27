@@ -5,7 +5,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Open Sans", Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #map {
@@ -482,6 +482,25 @@ ul {
     border-radius: 6px;
     font-size: 11px;
     width: 101px;
+}
+
+.imageheaderbig{
+  width: 100%;
+}
+
+.imageheadersmall{
+  display: none;
+  width: 100%;
+}
+
+@media screen and (max-width: 880px) {
+  .imageheaderbig{
+    display: none;
+  }
+
+  .imageheadersmall{
+    display: block;
+  }
 }
 
 @media screen and (max-width: 460px) {
