@@ -128,7 +128,7 @@ var openallmarkers = L.layerGroup();
 
 
       if (point.Latitude !== '' && point.Longitude !== '') {
-        var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
+        var marker = L.marker([point.Latitude, point.Longitude], {icon: icon, zIndexOffset: 1000})
           .bindPopup(
           '<div class="popup_header">' +
           (point['Image'] ? ('<img src="' + point['Image'] + '" alt="profile picture" id="circle"><br>') : '') +
