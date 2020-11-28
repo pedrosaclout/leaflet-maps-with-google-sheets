@@ -70,6 +70,13 @@ h6 {
   font-size: 1.2em;
 }
 
+.leaflet-popup {
+bottom: 0;  
+}
+.leaflet-popup-tip-container{
+  display: none;
+}
+
 .intro-popup .leaflet-popup-tip-container {
   width: 0;
   height: 0;
@@ -110,6 +117,7 @@ form {
 
 .leaflet-popup-content {
   min-width: 150px;
+  min-height:
 }
 
 .geojson-point-marker {
