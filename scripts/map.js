@@ -110,7 +110,7 @@ $(window).on('load', function() {
         ? [parseInt(iconSize.split('x')[0]), parseInt(iconSize.split('x')[1])]
         : [32, 32];
 
-      var anchor = 0, size[1]];
+      var anchor = [size[0] / 2, size[1]];
 
       var icon = (point['Marker Icon'].indexOf('.') > 0)
         ? L.icon({
