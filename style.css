@@ -70,9 +70,10 @@ h6 {
   font-size: 1.2em;
 }
 
-.leaflet-popup {
-bottom: 0;  
+.leaflet-popup  .leaflet-zoom-animated {
+bottom: 0;
 }
+
 .leaflet-popup-tip-container{
   display: none;
 }
