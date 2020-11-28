@@ -510,8 +510,12 @@ ul {
     font-size: 22px;
 }
 
+.leaflet-popup.leaflet-zoom-animated {
+    margin-bottom: 26px;
+}
 
 
+/* DELETE LATER */
 .imageheaderbig{
   width: 100%;
 }
