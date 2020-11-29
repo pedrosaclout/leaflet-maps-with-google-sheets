@@ -546,6 +546,11 @@ ul {
     min-width: 240px;
   }
 
+  #circle{
+    width: 50px;
+    height: 50px;
+  }
+
   h5 {
       font-size: 10px;
   }
