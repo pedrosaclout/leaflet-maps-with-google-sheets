@@ -156,13 +156,13 @@ var openallmarkers = L.layerGroup();
     if (layers === undefined || layers.length === 0) {
       map.addLayer(
         clusters
-        ? L.markerClusterGroup({showCoverageOnHover: false }).addLayer(group).addTo(map)
+        ? L.markerClusterGroup({showCoverageOnHover: false}).addLayer(group).addTo(map)
         : group
       );
     } else {
       if (clusters) {
         // Add multilayer cluster support
-        multilayerClusterSupport = L.markerClusterGroup.layerSupport();
+        multilayerClusterSupport = L.markerClusterGroup.layerSupport({showCoverageOnHover: false});
         multilayerClusterSupport.addTo(map);
 
         for (i in layers) {
