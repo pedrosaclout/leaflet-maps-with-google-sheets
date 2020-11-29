@@ -630,6 +630,21 @@ var openallmarkers = L.layerGroup();
 
     centerAndZoomMap(group);
 
+    // Add polylines
+    if (polylines && polylines.length > 0) {
+      processPolylines(polylines);
+    } else {
+      completePolylines = true;
+    }
+
+    // Add polygons
+    if (getPolygonSetting(0, '_polygonsGeojsonURL')
+      && getPolygonSetting(0, '_polygonsGeojsonURL').trim()) {
+      loadAllGeojsons(0);
+    } else {
+      completePolygons = true;
+    }
+
     // Add Nominatim Search control
     if (getSetting('_mapSearch') !== 'off') {
       var geocoder = L.Control.geocoder({
