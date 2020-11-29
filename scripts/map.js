@@ -156,7 +156,7 @@ var openallmarkers = L.layerGroup();
     if (layers === undefined || layers.length === 0) {
       map.addLayer(
         clusters
-        ? L.markerClusterGroup().addLayer(group).addTo(map)
+        ? L.markerClusterGroup({showCoverageOnHover: false }).addLayer(group).addTo(map)
         : group
       );
     } else {
@@ -170,8 +170,6 @@ var openallmarkers = L.layerGroup();
           layers[i].addTo(map);
         }
       }
-
-      new L.MarkerClusterGroup({showCoverageOnHover: false });
 
       var pos = (getSetting('_pointsLegendPos') == 'off')
         ? 'topleft'
