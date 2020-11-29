@@ -543,6 +543,7 @@ ul {
 @media screen and (max-width: 460px) {
   .leaflet-popup-content {
     max-width: 240px;
+    min-width: 240px;
   }
 
   h5 {
