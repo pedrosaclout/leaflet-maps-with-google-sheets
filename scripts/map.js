@@ -491,7 +491,7 @@ var openallmarkers = L.layerGroup();
 
       labels.push(
         '<i style="background:' + color + '; opacity: '
-        + tryPolygonSetting(p, '_colorOpacity', '0.7') + '"></i> ' +
+        + tryPolygonSetting(p, '_colorOpacity', '0') + '"></i> ' +
         from + ((to && isNum) ? '&ndash;' + to : (isNum) ? '+' : ''));
     }
 
@@ -513,16 +513,16 @@ var openallmarkers = L.layerGroup();
         weight: 1,
         opacity: 1,
         color: getColor(value),
-        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0.7'),
+        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0'),
         fillColor: 'white'
       }
     } else {
       return {  // Polygon and Polyline style
-        weight: 2,
-        opacity: 1,
+        weight: 0,
+        opacity: 0,
         color: tryPolygonSetting(polygon, '_outlineColor', 'white'),
         dashArray: '3',
-        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0.7'),
+        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0'),
         fillColor: getColor(value)
       }
     }
