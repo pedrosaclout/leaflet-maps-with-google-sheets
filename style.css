@@ -118,7 +118,9 @@ form {
 
 .leaflet-popup-content {
   min-width: 150px;
-  min-height:
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .geojson-point-marker {
