@@ -494,16 +494,15 @@ ul {
     width: 101px;
 }
 
-.btn.personalsharebutton{
-  float: right;
-}
-
 .btn.personalsharebutton {
     border: 0;
     color: #ac0404;
     padding: 0;
     background-color: white;
     cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
 }
 
 .material-icons.personalshare {
