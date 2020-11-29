@@ -118,9 +118,13 @@ form {
 
 .leaflet-popup-content {
   min-width: 150px;
-  max-height: 100px;
+}
+
+.leaflet-popup-content p{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .geojson-point-marker {
