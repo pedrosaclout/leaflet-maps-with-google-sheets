@@ -171,6 +171,8 @@ var openallmarkers = L.layerGroup();
         }
       }
 
+      new L.MarkerClusterGroup({showCoverageOnHover: false });
+
       var pos = (getSetting('_pointsLegendPos') == 'off')
         ? 'topleft'
         : getSetting('_pointsLegendPos');
