@@ -29,7 +29,7 @@ h3 {
   font-weight: normal;
 }
 
-#website, #linkedin{
+#website, .linkedin{
   display: inline-block;
   padding-right: 20px;
 }
@@ -519,6 +519,21 @@ ul {
     margin-bottom: 26px;
 }
 
+.iconify {
+    width: 17px;
+    height: 17px;
+    margin-bottom: -4px;
+    margin-left: -4px;
+}
+
+.desktopquery{
+  display: inline-block;
+}
+
+.phonequery{
+  display: none;
+}
+
 
 /* DELETE LATER */
 .imageheaderbig{
@@ -537,6 +552,14 @@ ul {
 
   .imageheadersmall{
     display: block;
+  }
+
+  .desktopquery{
+    display: none;
+  }
+
+  .phonequery{
+    display: inline-block;
   }
 }
 
@@ -579,5 +602,4 @@ a.googleform {
   .map-title.leaflet-bar.leaflet-control.leaflet-control-custom {
       width: 89vw;
   }
-
 }
