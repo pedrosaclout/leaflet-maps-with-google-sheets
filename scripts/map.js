@@ -133,8 +133,8 @@ var openallmarkers = L.layerGroup();
           '<h2>' + point['Name'] + '</h2>' +
           '<h3>' + point['Group'] + '</h3></div>' +
           '<p> ' + point['Description'] + ' </p>' +
-          (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '" target="_blank">Website</a> </h4>') : '') +
-          (point['Website'] ? ('<h4 id="website"> <a href="' + point['Website'] + '" target="_blank"><span class="iconify" data-icon="mdi:web" data-inline="false"></span></a> </h4>') : '') +
+          (point['Website'] ? ('<h4 id="website"> <a class="desktopquery" href="' + point['Website'] + '" target="_blank">Website</a> </h4>') : '') +
+          (point['Website'] ? ('<h4 id="website"> <a class="phonequery" href="' + point['Website'] + '" target="_blank"><span class="iconify" data-icon="mdi:web" data-inline="false"></span></a> </h4>') : '') +
           (point['LinkedIn'] ? ('<a class="linkedin desktopquery" href="' + point['LinkedIn'] + '" target="_blank"><h4>LinkedIn</h4></a>') : '') +
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
