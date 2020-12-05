@@ -126,25 +126,20 @@ var openallmarkers = L.layerGroup();
 
 
       if (point.Latitude !== '' && point.Longitude !== '') {
-        try {
-          var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-            .bindPopup(
-            '<div class="popup_header">' +
-            (point['Image'] ? ('<img src="' + point['Image'] + '" alt="profile picture" id="circle"><br>') : '') +
-            '<h2>' + point['Name'] + '</h2>' +
-            '<h3>' + point['Group'] + '</h3></div>' +
-            '<p> ' + point['Description'] + ' </p>' +
-            (point['Website'] ? ('<h4 style="display: inline-block;"> <a class="desktopquery" href="' + point['Website'] + '" target="_blank">Website</a> </h4>') : '') +
-            (point['Website'] ? ('<h4 id="website"> <a class="phonequery" href="' + point['Website'] + '" target="_blank"><span class="iconify" data-icon="mdi:web" data-inline="false"></span></a> </h4>') : '') +
-            (point['LinkedIn'] ? ('<a class="linkedin desktopquery" href="' + point['LinkedIn'] + '" target="_blank"><h4>LinkedIn</h4></a>') : '') +
-            (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
-            '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
-            '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
-            openallmarkers.addLayer(marker);
-          }
-        catch(err) {
-          console.log("check the Google Sheets for errors")
-        }
+        var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
+          .bindPopup(
+          '<div class="popup_header">' +
+          (point['Image'] ? ('<img src="' + point['Image'] + '" alt="profile picture" id="circle"><br>') : '') +
+          '<h2>' + point['Name'] + '</h2>' +
+          '<h3>' + point['Group'] + '</h3></div>' +
+          '<p> ' + point['Description'] + ' </p>' +
+          (point['Website'] ? ('<h4 style="display: inline-block;"> <a class="desktopquery" href="' + point['Website'] + '" target="_blank">Website</a> </h4>') : '') +
+          (point['Website'] ? ('<h4 id="website"> <a class="phonequery" href="' + point['Website'] + '" target="_blank"><span class="iconify" data-icon="mdi:web" data-inline="false"></span></a> </h4>') : '') +
+          (point['LinkedIn'] ? ('<a class="linkedin desktopquery" href="' + point['LinkedIn'] + '" target="_blank"><h4>LinkedIn</h4></a>') : '') +
+          (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
+          '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
+          '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
+          openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
