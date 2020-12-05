@@ -20,9 +20,7 @@ $(window).on('load', function() {
       iconColor: iconColor
     });
   }
-
-
-
+ß
   /**
    * Sets the view so that all markers are visible, or
    * to specified (lat, lon) and zoom if all three are specified
