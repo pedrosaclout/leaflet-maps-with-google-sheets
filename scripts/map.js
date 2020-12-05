@@ -930,26 +930,7 @@ var openallmarkers = L.layerGroup();
     $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;
   }
 
-  L.Control.GroupedLayers.include({
-      addOverlays: function () {
-          for (var i in this._layers) {
-              if (this._layers[i].overlay) {
-                  if (!this._map.hasLayer(this._layers[i].layer)) {
-                      this._map.addLayer(this._layers[i].layer);
-                  }
-              }
-          }
-      },
-      removeOverlays: function () {
-          for (var i in this._layers) {
-              if (this._layers[i].overlay) {
-                  if (this._map.hasLayer(this._layers[i].layer)) {
-                      this._map.removeLayer(this._layers[i].layer);
-                  }
-              }
-          }
-      }
-  });
+
   /**
    * Loads the basemap and adds it to the map
    */
