@@ -219,10 +219,6 @@ var openallmarkers = L.layerGroup();
       map.on('layeradd', updateTable);
       map.on('layerremove', updateTable);
 
-
-      var div = document.getElementsByClassName("leaflet-control-layers-overlays");
-      div.innerHTML += '<input type="checkbox" id="checkall" />';
-
       // Clear table data and add only visible markers to it
       function updateTable() {
         var pointsVisible = [];
@@ -1095,6 +1091,9 @@ var openallmarkers = L.layerGroup();
 
        }
    });
+
+   var div = document.getElementsByClassName("leaflet-control-layers-overlays");
+   div.innerHTML += '<input type="checkbox" id="checkall" />';
 
   /**
    * Reformulates documentSettings as a dictionary, e.g.
