@@ -530,7 +530,11 @@ ul {
   display: inline-block;
 }
 
-.phonequery{
+.social-share.desktopquery.facebook, .social-share.desktopquery.linkedin{
+  display: block;
+}
+
+.phonequery, .social-share.phonequery.facebook, .social-share.phonequery.linkedin{
   display: none;
 }
 
@@ -554,13 +558,21 @@ ul {
     display: block;
   }
 
-  .desktopquery{
+  .desktopquery, .social-share.desktopquery.facebook, .social-share.desktopquery.linkedin{
     display: none;
   }
 
   .phonequery{
     display: inline-block;
   }
+
+  .social-share.phonequery.facebook, .social-share.phonequery.linkedin{
+    display: block;
+    width: 14px;
+    height: 17px;
+    padding-top: 1px;
+}
+
 }
 
 @media screen and (max-width: 460px) {
