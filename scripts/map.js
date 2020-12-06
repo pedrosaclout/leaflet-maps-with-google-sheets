@@ -64,13 +64,9 @@ $(window).on('load', function() {
    * Given a collection of points, determines the layers based on 'Group'
    * column in the spreadsheet.
    */
-
-   var allMarkersOverlay = new L.LayerGroup();
-   map.addLayer(allMarkersOverlay);
-
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
-    var layers = {"Select all": allMarkersOverlay};
+    var layers = {};
     for (var i in points) {
       var pointLayerNameFromSpreadsheet = points[i].Group;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
@@ -96,6 +92,14 @@ $(window).on('load', function() {
     return layers;
   }
 
+var allMarkersOverlay = new L.LayerGroup();
+map.addLayer(allMarkersOverlay);
+
+var overlays = {
+  "Select all": allMarkersOverlay
+};
+
+map.addControl(new L.Control.Layers(null, overlays));
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
