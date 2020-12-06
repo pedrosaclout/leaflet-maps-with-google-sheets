@@ -184,7 +184,7 @@ var openallmarkers = L.layerGroup();
         ? 'topleft'
         : getSetting('_pointsLegendPos');
 
-      var pointsLegend = L.control.layers(overlays, layers, {
+      var pointsLegend = L.control.layers(null, layers, {
         collapsed: false,
         position: pos,
       });
