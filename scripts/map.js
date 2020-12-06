@@ -92,6 +92,11 @@ $(window).on('load', function() {
     return layers;
   }
 
+  var overlays = {
+  			"All together": allMarkersOverlay
+  		};
+
+  		L.control.layers(overlays).addTo(map);
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
@@ -138,7 +143,7 @@ var openallmarkers = L.layerGroup();
           (point['LinkedIn'] ? ('<a class="linkedin desktopquery" href="' + point['LinkedIn'] + '" target="_blank"><h4>LinkedIn</h4></a>') : '') +
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
-          '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
+          '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>').addTo(allMarkersOverlay);
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
