@@ -67,7 +67,7 @@ $(window).on('load', function() {
 
    var allMarkersOverlay = new L.LayerGroup();
    map.addLayer(allMarkersOverlay);
-   
+
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
     var layers = {"Select all": allMarkersOverlay};
@@ -96,7 +96,6 @@ $(window).on('load', function() {
     return layers;
   }
 
-map.addControl(new L.Control.Layers(null, overlays));
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
