@@ -79,12 +79,6 @@ $(window).on('load', function() {
       }
     }
 
-    var layer_select_all = new L.GeoJSON(null);
-    var overlays = [{ groupName : "Your Group", expanded : false, layers : { "Select All": layer_select_all, "Other layer": layers }}];
-    map.on('overlayadd', function(eo){ if (eo.layer === layer_select_all){control.selectGroup( "Your Group" );}
-    map.on('overlayremove', function(eo){ if (eo.layer === layer_select_all){control.unSelectGroup( "Your Group" );}
-    
-
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 0) {
       layers = undefined;
