@@ -199,7 +199,7 @@ var openallmarkers = L.layerGroup();
     $(document).ready(function() {
   $('#checkall').click(function() {
     var checked = $(this).prop('checked');
-    $('#checkboxes').find('input:checkbox').prop('checked', checked);
+    $('.leaflet-control-layers-overlays').find('input:checkbox').prop('checked', checked);
   });
 })
 
