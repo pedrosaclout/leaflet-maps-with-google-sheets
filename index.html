@@ -85,8 +85,8 @@
 <body>
 
   <div class="loader"> <img src="./media/uporto_logo.jpg" alt="UPORTO logo" width="200px"> </div>
-  <div id="map"></div><!--
-  --><div class="links">
+  <div id="map"></div>
+    <div class="links">
       <ul>
         <li class="social-share facebook">Share on Facebook</li>
         <li class="social-share linkedin">Share on LinkedIn</li>
@@ -109,7 +109,7 @@
     text: function(trigger) {
       const query = trigger.getAttribute('data-clipboard-target');
       const target = document.querySelector(query);
-      alert("Share link copied to your clipboard.");
+      alert("The link has been copied to your clipboard.");
       return target.getAttribute('href');
     }
   });
