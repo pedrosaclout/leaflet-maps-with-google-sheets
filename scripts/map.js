@@ -94,11 +94,7 @@ $(window).on('load', function() {
 
 
   var legend = L.control({position: 'bottomleft'});
-    legend.onAdd = function (map) {
-
-    var div = L.DomUtil.create('div', 'info legend');
-
-    legend.addTo(map);
+  legend.addTo(map);
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
