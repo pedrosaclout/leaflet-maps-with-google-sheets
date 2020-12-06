@@ -204,7 +204,7 @@ var openallmarkers = L.layerGroup();
 })
 
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
-    $('.leaflet-control-layers-overlays').append('<input type="checkbox" id="checkall"/> <span> Check all </span>');
+    $('.leaflet-control-layers-overlays').append('<input type="checkbox" id="checkall checked"/> <span> Check all </span>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
