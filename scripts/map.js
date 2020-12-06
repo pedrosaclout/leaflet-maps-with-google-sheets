@@ -184,7 +184,7 @@ var openallmarkers = L.layerGroup();
         ? 'topleft'
         : getSetting('_pointsLegendPos');
 
-      var pointsLegend = L.control.layers(null, layers, {
+      var pointsLegend = L.control.layers(overlays, layers, {
         collapsed: false,
         position: pos,
       });
@@ -197,7 +197,7 @@ var openallmarkers = L.layerGroup();
     }
 
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
-    $('#points-legend').append('<input type="checkbox" id="checkall"/>');
+    $('#points-legend').append('<input type="checkbox" id="checkall"/> <span> Check all </span>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
