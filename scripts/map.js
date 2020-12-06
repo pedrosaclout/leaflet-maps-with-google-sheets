@@ -92,9 +92,6 @@ $(window).on('load', function() {
     return layers;
   }
 
-
-  var legend = L.control({position: 'bottomleft'});
-  legend.addTo(map);
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
