@@ -149,6 +149,7 @@ var openallmarkers = L.layerGroup();
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
           openallmarkers.addLayer(marker);
           allMarkersOverlay.addLayer(marker);
+          console.log(openallmarkers);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
