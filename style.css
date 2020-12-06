@@ -571,7 +571,13 @@ ul {
     width: 14px;
     height: 17px;
     padding-top: 1px;
-}
+  }
+
+  h6{
+      font-size: 12px;
+      color: #ac0404;
+      font-weight: 600;
+  }
 
 }
 
