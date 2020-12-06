@@ -66,7 +66,7 @@ $(window).on('load', function() {
    */
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
-    var layers = {};
+    var layers = {"Select all": allMarkersOverlay};
     for (var i in points) {
       var pointLayerNameFromSpreadsheet = points[i].Group;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
@@ -94,10 +94,6 @@ $(window).on('load', function() {
 
 var allMarkersOverlay = new L.LayerGroup();
 map.addLayer(allMarkersOverlay);
-
-var overlays = {
-  "Select all": allMarkersOverlay
-};
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
@@ -183,7 +179,7 @@ var openallmarkers = L.layerGroup();
         ? 'topleft'
         : getSetting('_pointsLegendPos');
 
-      var pointsLegend = L.control.layers(null, layers, overlays {
+      var pointsLegend = L.control.layers(null, layers {
         collapsed: false,
         position: pos,
       });
