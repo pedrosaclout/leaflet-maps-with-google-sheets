@@ -92,8 +92,13 @@ $(window).on('load', function() {
     return layers;
   }
 
-  var links = L.marker([51.508, -0.11]).bindPopup("hello links").addTo(map);
 
+  var legend = L.control({position: 'bottomleft'});
+    legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+
+    legend.addTo(map);
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
