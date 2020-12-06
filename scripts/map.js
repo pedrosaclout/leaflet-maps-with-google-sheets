@@ -78,6 +78,7 @@ $(window).on('load', function() {
         layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
       }
     }
+    var checkall = L.layerGroup(layers).addTo(map);
 
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 0) {
@@ -1091,10 +1092,6 @@ var openallmarkers = L.layerGroup();
 
        }
    });
-
-   var div = document.getElementsByClassName("leaflet-control-layers-overlays");
-   div.innerHTML += '<input type="checkbox" id="checkall" />';
-
   /**
    * Reformulates documentSettings as a dictionary, e.g.
    * {"webpageTitle": "Leaflet Boilerplate", "infoPopupText": "Stuff"}
