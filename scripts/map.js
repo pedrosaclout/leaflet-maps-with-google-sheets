@@ -92,6 +92,8 @@ $(window).on('load', function() {
     return layers;
   }
 
+  var links = L.marker([51.508, -0.11]).bindPopup("hello links").addTo(map);
+
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
