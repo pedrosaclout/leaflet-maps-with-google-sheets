@@ -99,7 +99,7 @@ var overlays = {
   "Select all": allMarkersOverlay
 };
 
-map.addControl(new L.Control.Layers(null, overlays, {position: 'topleft'}));
+//map.addControl(new L.Control.Layers(null, overlays, {position: 'topleft'}));
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
@@ -205,6 +205,7 @@ var openallmarkers = L.layerGroup();
 
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
     $('.leaflet-control-layers-overlays').append('<input type="checkbox" id="checkall" checked/> <span> Check all </span>');
+    $('.leaflet-control-layers-overlays').append(overlays);
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
