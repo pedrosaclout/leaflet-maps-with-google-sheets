@@ -149,7 +149,6 @@ var openallmarkers = L.layerGroup();
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
           openallmarkers.addLayer(marker);
           allMarkersOverlay.addLayer(marker);
-          console.log(openallmarkers);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -198,6 +197,7 @@ var openallmarkers = L.layerGroup();
     }
 
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
+    $('#points-legend').append('<input type="checkbox" id="checkall"/>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
