@@ -92,13 +92,6 @@ $(window).on('load', function() {
     return layers;
   }
 
-var allMarkersOverlay = new L.LayerGroup();
-map.addLayer(allMarkersOverlay);
-
-var overlays = {
-  "Select all": allMarkersOverlay
-};
-
 map.addControl(new L.Control.Layers(null, overlays, {position: 'topleft'}));
   /**
    * Assigns points to appropriate layers and clusters them if needed
@@ -148,7 +141,6 @@ var openallmarkers = L.layerGroup();
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
           openallmarkers.addLayer(marker);
-          allMarkersOverlay.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -204,7 +196,6 @@ var openallmarkers = L.layerGroup();
     })
 
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
-    $('.leaflet-control-layers-overlays').append('<input type="checkbox" id="checkall" checked/> <span> Check all </span>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
