@@ -187,13 +187,6 @@ var openallmarkers = L.layerGroup();
       }
     }
 
-    $(document).ready(function() {
-      $('#checkall').click(function() {
-        var checked = $(this).prop('checked');
-        $('.leaflet-control-layers-overlays').find('input:checkbox').prop('checked', checked);
-      });
-    })
-
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
