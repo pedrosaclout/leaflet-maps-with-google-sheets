@@ -92,7 +92,6 @@ $(window).on('load', function() {
     return layers;
   }
 
-map.addControl(new L.Control.Layers(null, overlays, {position: 'topleft'}));
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
