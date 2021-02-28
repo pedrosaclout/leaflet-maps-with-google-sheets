@@ -90,9 +90,9 @@ $(window).on('load', function() {
         layers[layerNameFromSpreadsheet].addTo(map);
       }
     }
-    return layers;
     console.log(layers);
     console.log("what");
+    return layers;
   }
 
   /**
