@@ -66,7 +66,7 @@ $(window).on('load', function() {
    */
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
-    var layers = {"All": all_layers};
+    var layers = {};
     for (var i in points) {
       var pointLayerNameFromSpreadsheet = points[i].Group;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
@@ -91,7 +91,8 @@ $(window).on('load', function() {
       }
 
     }
-    var all_layers = L.layerGroup(layers).addTo(map);
+    var all_layers = L.layerGroup(layers);
+    layers.all_layers = "all";
     console.log(layers);
     console.log("what5");
     return layers;
