@@ -91,12 +91,8 @@ $(window).on('load', function() {
       }
 
     }
-    var all_layers = {
-        "All": layers
-    };
-    L.control.layers(all_layers).addTo(map);
 
-    console.log(all_layers);
+    console.log(layers);
     console.log("what2");
     return layers;
   }
