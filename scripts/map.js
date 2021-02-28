@@ -97,6 +97,8 @@ $(window).on('load', function() {
     return layers;
   }
 
+var openallmarkers = L.layerGroup();
+
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
@@ -127,7 +129,7 @@ $(window).on('load', function() {
           point['Icon Color']
         );
 
-var openallmarkers = L.layerGroup();
+
 
 
       if (point.Latitude !== '' && point.Longitude !== '') {
@@ -154,7 +156,7 @@ var openallmarkers = L.layerGroup();
       }
     }
 
-
+    console.log(openallmarkers);
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
 
