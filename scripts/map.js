@@ -79,9 +79,6 @@ $(window).on('load', function() {
       }
     }
 
-    var selectall = L.layerGroup(layerNamesFromSpreadsheet);
-    console.log(selectall);
-
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 0) {
       layers = undefined;
