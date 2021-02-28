@@ -97,7 +97,9 @@ $(window).on('load', function() {
     return layers;
   }
 
-var openallmarkers = L.layerGroup();
+  var all_layers = L.layerGroup(layers).addTo(map);
+
+var openallmarkers = L.layerGroup()addTo(map);
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
