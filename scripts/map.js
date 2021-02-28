@@ -155,7 +155,7 @@ var openallmarkers = L.layerGroup();
       }
     }
 
-    layers["All"] = openallmarkers;
+    layers["Other Markers Test"] = openallmarkers;
     openallmarkers.addTo(map);
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
@@ -761,7 +761,7 @@ var openallmarkers = L.layerGroup();
 
     // Add Google Analytics if the ID exists
     var ga = getSetting('_googleAnalytics');
-    console.log(ga)
+    //console.log(ga)
     if ( ga && ga.length >= 10 ) {
       var gaScript = document.createElement('script');
       gaScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=' + ga);
