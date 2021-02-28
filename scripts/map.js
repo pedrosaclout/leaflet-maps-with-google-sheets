@@ -78,8 +78,8 @@ $(window).on('load', function() {
         layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
       }
     }
-    console.log(layerNamesFromSpreadsheet);
-    console.log("hello");
+
+
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 0) {
       layers = undefined;
@@ -91,6 +91,7 @@ $(window).on('load', function() {
       }
     }
     return layers;
+    console.log(layers);
   }
 
   /**
