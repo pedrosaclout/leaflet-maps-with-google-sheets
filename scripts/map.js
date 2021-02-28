@@ -186,7 +186,7 @@ var openallmarkers = L.layerGroup();
 
         var pointsLegend2 = L.control.layers(null, layers, {
           collapsed: false,
-          position: 'topright'
+          position: 'bottomright'
         });
 
       var pointsLegend = L.control.layers(null, layers, {
