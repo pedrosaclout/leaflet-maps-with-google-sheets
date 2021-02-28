@@ -79,6 +79,10 @@ $(window).on('load', function() {
       }
     }
 
+var all_layers = {
+    "All": layers
+};
+L.control.layers(all_layers).addTo(map);
 
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 0) {
@@ -88,9 +92,8 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
+
       }
-      var all_layers = L.layerGroup(layers);
-      all_layers.addTo(map);
 
     }
     console.log(layers);
