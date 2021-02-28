@@ -157,6 +157,7 @@ var openallmarkers = L.layerGroup();
 
     layers["Other Markers Test"] = openallmarkers;
     openallmarkers.addTo(map);
+
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
 
@@ -182,6 +183,11 @@ var openallmarkers = L.layerGroup();
       var pos = (getSetting('_pointsLegendPos') == 'off')
         ? 'topleft'
         : getSetting('_pointsLegendPos');
+
+        var pointsLegend2 = L.control.layers(null, layers, {
+          collapsed: false,
+          position: 'topright'
+        });
 
       var pointsLegend = L.control.layers(null, layers, {
         collapsed: false,
