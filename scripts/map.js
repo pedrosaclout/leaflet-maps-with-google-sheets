@@ -155,7 +155,7 @@ var openallmarkers = L.layerGroup();
       }
     }
 
-    layers["all"] = openallmarkers;
+    layers["All"] = openallmarkers;
     openallmarkers.addTo(map);
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
