@@ -90,6 +90,7 @@ $(window).on('load', function() {
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
       }
+      layers[selectall].addTo(map);
     }
     return layers;
   }
