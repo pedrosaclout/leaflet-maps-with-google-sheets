@@ -93,7 +93,7 @@ $(window).on('load', function() {
     }
     layers["all"] = L.layerGroup(layers);
     console.log(layers);
-    console.log("what6");
+    console.log("what7");
     return layers;
   }
 
@@ -159,6 +159,7 @@ var openallmarkers = L.layerGroup();
     }
 
     console.log(openallmarkers);
+    layers["all_m"] = openallmarkers;
     openallmarkers.addTo(map);
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
