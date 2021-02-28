@@ -66,7 +66,7 @@ $(window).on('load', function() {
    */
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
-    var layers = {};
+    var layers = {"All": all_layers};
     for (var i in points) {
       var pointLayerNameFromSpreadsheet = points[i].Group;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
