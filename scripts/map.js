@@ -93,7 +93,7 @@ $(window).on('load', function() {
     }
     var all_layers = L.layerGroup(layers).addTo(map);
     console.log(layers);
-    console.log("what4");
+    console.log("what5");
     return layers;
   }
 
