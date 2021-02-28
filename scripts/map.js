@@ -91,8 +91,7 @@ $(window).on('load', function() {
       }
 
     }
-    var all_layers = L.layerGroup(layers);
-    layers["all"] = all_layers;
+    layers["all"] = L.layerGroup(layers);
     console.log(layers);
     console.log("what6");
     return layers;
