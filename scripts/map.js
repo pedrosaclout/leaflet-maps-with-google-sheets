@@ -706,14 +706,14 @@ var openallmarkers = L.layerGroup();
     changeAttribution();
 
     // Append icons to categories in markers legend
-    $('#points-legend label span').each(function(i) {
-      var legendIcon = (markerColors[i].indexOf('.') > 0)
-        ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
-        : '&nbsp;<i class="fa fa-map-marker" style="color: '
-          + markerColors[i]
-          + '"></i>';
-      $(this).prepend(legendIcon);
-    });
+    // $('#points-legend label span').each(function(i) {
+    //   var legendIcon = (markerColors[i].indexOf('.') > 0)
+    //     ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
+    //     : '&nbsp;<i class="fa fa-map-marker" style="color: '
+    //       + markerColors[i]
+    //       + '"></i>';
+    //   $(this).prepend(legendIcon);
+    // });
 
     // When all processing is done, hide the loader and make the map visible
     showMap();
