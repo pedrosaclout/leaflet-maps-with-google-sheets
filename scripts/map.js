@@ -93,7 +93,7 @@ $(window).on('load', function() {
     }
 
     console.log(layers);
-    console.log("what3");
+    console.log("what4");
     return layers;
   }
 
