@@ -144,7 +144,7 @@ var openallmarkers = L.layerGroup();
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
-          openallmarkers.addLayer(marker);
+          openallmarkers.addLayer(marker).addTo(map);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -153,6 +153,7 @@ var openallmarkers = L.layerGroup();
         markerArray.push(marker);
       }
     }
+
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
