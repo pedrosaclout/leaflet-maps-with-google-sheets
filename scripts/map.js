@@ -92,6 +92,7 @@ $(window).on('load', function() {
     }
     return layers;
     console.log(layers);
+    console.log("what");
   }
 
   /**
