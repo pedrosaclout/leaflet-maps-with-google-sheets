@@ -99,7 +99,7 @@ $(window).on('load', function() {
 
   var all_layers = L.layerGroup(layers).addTo(map);
 
-var openallmarkers = L.layerGroup()addTo(map);
+var openallmarkers = L.layerGroup();
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
@@ -159,6 +159,7 @@ var openallmarkers = L.layerGroup()addTo(map);
     }
 
     console.log(openallmarkers);
+    openallmarkers.addTo(map);
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
 
