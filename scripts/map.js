@@ -79,6 +79,8 @@ $(window).on('load', function() {
       }
     }
 
+    var hash = new L.Hash(map, layers);
+
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 0) {
       layers = undefined;
