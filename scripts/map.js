@@ -98,7 +98,7 @@ $(window).on('load', function() {
                         'Faculdade de Engenharia (FEUP)': leaflet_layer_object,
                         'Faculdade de Belas Artes (FBAUP)': leaflet_layer_object};
 
-    var hash = new L.Hash(map, allMapLayers);
+    var hash = new L.Hash(map, layers);
   }
 
 
