@@ -92,6 +92,8 @@ $(window).on('load', function() {
 
     }
     return layers;
+
+
     var hash = new L.Hash(map, layers);
   }
 
