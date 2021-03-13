@@ -93,8 +93,12 @@ $(window).on('load', function() {
     }
     return layers;
 
+    // Assuming your map instance is in a variable called map
+    var allMapLayers = {'base_layer_name': leaflet_layer_object,
+                        'Faculdade de Engenharia (FEUP)': leaflet_layer_object,
+                        'Faculdade de Belas Artes (FBAUP)': leaflet_layer_object};
 
-    var hash = new L.Hash(map, layers);
+    var hash = new L.Hash(map, allMapLayers);
   }
 
 
