@@ -87,21 +87,17 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
-        var allMapLayers = {'piet': layerNameFromSpreadsheet};
-        var hash = new L.Hash(map, allMapLayers);
       }
 
     }
-
     console.log(layers);
-
-
     return layers;
   }
 
 
 var openallmarkers = L.layerGroup();
-
+var allMapLayers = {'openallmarkers': openallmarkers};
+var hash = new L.Hash(map, allMapLayers);
 
 
 
@@ -194,11 +190,11 @@ var openallmarkers = L.layerGroup();
         : getSetting('_pointsLegendPos');
 
 
-        // var pointsLegend2 = L.control.layers(null, layers, {
-        //   collapsed: false,
-        //   position: 'bottomright'
-        // });
-        // pointsLegend2.addTo(map)
+        var pointsLegend2 = L.control.layers(null, layers, {
+          collapsed: false,
+          position: 'bottomright'
+        });
+        pointsLegend2.addTo(map)
 
       var pointsLegend = L.control.layers(null, layers, {
         collapsed: false,
