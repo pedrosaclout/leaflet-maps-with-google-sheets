@@ -92,6 +92,8 @@ $(window).on('load', function() {
 
     }
     return layers;
+  }
+
 
 
 var openallmarkers = L.layerGroup();
