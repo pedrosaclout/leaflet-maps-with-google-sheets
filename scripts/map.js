@@ -90,14 +90,15 @@ $(window).on('load', function() {
       }
 
     }
-    var allMapLayers = {'piet': piet};
-    var hash = new L.Hash(map, allMapLayers);
-    console.log(layers);
+
     return layers;
   }
 
 
 var openallmarkers = L.layerGroup();
+var allMapLayers = {'openallmarkers': openallmarkers};
+var hash = new L.Hash(map, allMapLayers);
+console.log(layers);
 
 
 
