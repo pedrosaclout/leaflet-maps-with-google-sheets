@@ -88,7 +88,7 @@ $(window).on('load', function() {
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
         // Assuming your map instance is in a variable called map
-        var allMapLayers = {layers[layerNameFromSpreadsheet]: layers[layerNameFromSpreadsheet]};
+        var allMapLayers = { 'test' : layers[layerNameFromSpreadsheet] };
 
 
       }
