@@ -92,6 +92,7 @@ $(window).on('load', function() {
 
     }
     return layers;
+    console.log(layers);
 
     // Assuming your map instance is in a variable called map
     var allMapLayers = {'base_layer_name': leaflet_layer_object,
