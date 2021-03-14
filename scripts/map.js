@@ -87,7 +87,7 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
-
+        console.log(layerNameFromSpreadsheet);
       }
 
     }
