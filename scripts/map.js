@@ -95,8 +95,14 @@ $(window).on('load', function() {
   }
 
 
-
 var openallmarkers = L.layerGroup();
+
+// Assuming your map instance is in a variable called map
+  var allMapLayers = {
+                      'all': openallmarkers
+                      };
+  var hash = new L.Hash(map, allMapLayers);
+
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
