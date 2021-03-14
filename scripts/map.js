@@ -87,21 +87,20 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
+        // Assuming your map instance is in a variable called map
+        var allMapLayers = {layers[layerNameFromSpreadsheet]: layers[layerNameFromSpreadsheet]};
+
+
+      }
 
       }
 
     }
+    var hash = new L.Hash(map, allMapLayers);
     console.log(layers);
     return layers;
 
 
-    // Assuming your map instance is in a variable called map
-    var allMapLayers = {'base_layer_name': leaflet_layer_object,
-                        'Faculdade de Engenharia (FEUP)': leaflet_layer_object,
-                        'Faculdade de Belas Artes (FBAUP)': leaflet_layer_object};
-
-    var hash = new L.Hash(map, layers);
-  }
 
 
 
