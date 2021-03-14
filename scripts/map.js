@@ -90,7 +90,7 @@ $(window).on('load', function() {
       }
 
     }
-
+    console.log(layers);
     return layers;
   }
 
@@ -98,7 +98,7 @@ $(window).on('load', function() {
 var openallmarkers = L.layerGroup();
 var allMapLayers = {'openallmarkers': openallmarkers};
 var hash = new L.Hash(map, allMapLayers);
-console.log(layers);
+
 
 
 
