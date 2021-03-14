@@ -87,16 +87,17 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
-
       }
 
     }
+    console.log(layers);
     return layers;
   }
 
 
-
 var openallmarkers = L.layerGroup();
+var hash = new L.Hash(map);
+
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
