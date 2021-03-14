@@ -192,11 +192,11 @@ var openallmarkers = L.layerGroup();
         : getSetting('_pointsLegendPos');
 
 
-        var pointsLegend2 = L.control.layers(null, layers, {
-          collapsed: false,
-          position: 'bottomright'
-        });
-        pointsLegend2.addTo(map)
+        // var pointsLegend2 = L.control.layers(null, layers, {
+        //   collapsed: false,
+        //   position: 'bottomright'
+        // });
+        // pointsLegend2.addTo(map)
 
       var pointsLegend = L.control.layers(null, layers, {
         collapsed: false,
