@@ -87,20 +87,19 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
-        // Assuming your map instance is in a variable called map
-        var allMapLayers = { 'test' : layers[layerNameFromSpreadsheet] };
-
-
-      }
 
       }
 
     }
-    var hash = new L.Hash(map, allMapLayers);
     console.log(layers);
     return layers;
 
 
+    // Assuming your map instance is in a variable called map
+    var allMapLayers = {'piet': piet
+                      };
+
+    var hash = new L.Hash(map, allMapLayers);
 
 
 
