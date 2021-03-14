@@ -92,7 +92,7 @@ $(window).on('load', function() {
     }
 
     console.log(layers);
-    var allMapLayers = {'piet': piet};
+    var allMapLayers = {'piet': layerNamesFromSpreadsheet[18]};
     var hash = new L.Hash(map, allMapLayers);
     return layers;
   }
