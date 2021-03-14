@@ -87,14 +87,15 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
+        var allMapLayers = {'piet': layerNameFromSpreadsheet};
+        var hash = new L.Hash(map, allMapLayers);
       }
 
     }
 
     console.log(layers);
-    console.log(layerNameFromSpreadsheet[17]);
-    var allMapLayers = {'piet': layerNameFromSpreadsheet[17]};
-    var hash = new L.Hash(map, allMapLayers);
+
+
     return layers;
   }
 
