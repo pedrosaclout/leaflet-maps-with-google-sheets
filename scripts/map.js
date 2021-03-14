@@ -93,7 +93,8 @@ $(window).on('load', function() {
     }
     return layers;
     // Assuming your map instance is in a variable called map
- var allMapLayers = {'piet': piet};
+ var allMapLayers = {'piet': piet,
+                     'everything': openallmarkers};
  var hash = new L.Hash(map, allMapLayers);
   }
 
