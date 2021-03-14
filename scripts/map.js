@@ -92,7 +92,11 @@ $(window).on('load', function() {
 
     }
     return layers;
-    var hash = new L.Hash(map, layers);
+    // Assuming your map instance is in a variable called map
+ var allMapLayers = {'piet': piet,
+                     'overlay_name': leaflet_layer_object,
+                     'another_overlay_name': leaflet_layer_object};
+ var hash = new L.Hash(map, allMapLayers);
   }
 
 
