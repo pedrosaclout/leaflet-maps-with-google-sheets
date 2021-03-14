@@ -96,7 +96,7 @@ $(window).on('load', function() {
 
 
 var openallmarkers = L.layerGroup();
-var hash = new L.Hash(map, openallmarkers);
+var hash = new L.Hash(map);
 
 
   /**
