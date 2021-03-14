@@ -90,6 +90,7 @@ $(window).on('load', function() {
       }
 
     }
+    var allMapLayers = {'piet': piet};
     console.log(layers);
     return layers;
   }
@@ -97,7 +98,7 @@ $(window).on('load', function() {
 
 var openallmarkers = L.layerGroup();
 
-var allMapLayers = {'piet': piet};
+
 var hash = new L.Hash(map, allMapLayers);
 
   /**
