@@ -91,6 +91,7 @@ $(window).on('load', function() {
 
     }
     var allMapLayers = {'piet': piet};
+    var hash = new L.Hash(map, allMapLayers);
     console.log(layers);
     return layers;
   }
@@ -99,7 +100,7 @@ $(window).on('load', function() {
 var openallmarkers = L.layerGroup();
 
 
-var hash = new L.Hash(map, allMapLayers);
+
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
