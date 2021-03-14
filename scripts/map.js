@@ -92,8 +92,8 @@ $(window).on('load', function() {
     }
 
     console.log(layers);
-    console.log(layerNameFromSpreadsheet[18]);
-    var allMapLayers = {'piet': layerNameFromSpreadsheet[18]};
+    console.log(layerNameFromSpreadsheet[17]);
+    var allMapLayers = {'piet': layerNameFromSpreadsheet[17]};
     var hash = new L.Hash(map, allMapLayers);
     return layers;
   }
