@@ -154,7 +154,7 @@ var allMapLayers = {'openallmarkers': openallmarkers};
         markerArray.push(marker);
         //hash
         allMapLayers[point.Layer] = layers[point.Layer];
-        console.log(point.Layer);
+        //console.log(point.Layer);
       }
 
     }
