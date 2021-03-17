@@ -149,13 +149,16 @@ var allMapLayers = {'openallmarkers': openallmarkers};
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
-          allMapLayers[point.Layer] = layers[point.Layer];
-          console.log(point.Layer);
         }
 
         markerArray.push(marker);
+        //hash
+        allMapLayers[point.Layer] = layers[point.Layer];
+        console.log(point.Layer);
       }
+
     }
+
 
     layers["Other Markers Test"] = openallmarkers;
     openallmarkers.addTo(map);
