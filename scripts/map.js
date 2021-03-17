@@ -97,8 +97,6 @@ $(window).on('load', function() {
 
 var openallmarkers = L.layerGroup();
 var allMapLayers = {'openallmarkers': openallmarkers};
-var hash = new L.Hash(map, allMapLayers);
-
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
@@ -291,6 +289,10 @@ var hash = new L.Hash(map, allMapLayers);
     completePoints = true;
     return group;
   }
+
+  //full hash plugin
+  var hash = new L.Hash(map, allMapLayers);
+  console.log(allMapLayers);
 
   var polygon = 0; // current active polygon
   var layer = 0; // number representing current layer among layers in legend
