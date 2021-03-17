@@ -96,10 +96,8 @@ $(window).on('load', function() {
 
 
 var openallmarkers = L.layerGroup();
-var feup = L.layerGroup();
 var allMapLayers = {'openallmarkers': openallmarkers};
 var hash = new L.Hash(map, allMapLayers);
-
 
 
   /**
@@ -152,8 +150,8 @@ var hash = new L.Hash(map, allMapLayers);
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
-          console.log(layers[point.Layer]);
           marker.addTo(layers[point.Layer]);
+          allMapLayers[layers[point.Layer]] = layers[point.Layer];
         }
 
         markerArray.push(marker);
@@ -191,11 +189,11 @@ var hash = new L.Hash(map, allMapLayers);
         : getSetting('_pointsLegendPos');
 
 
-        var pointsLegend2 = L.control.layers(null, layers, {
-          collapsed: false,
-          position: 'bottomright'
-        });
-        pointsLegend2.addTo(map)
+        // var pointsLegend2 = L.control.layers(null, layers, {
+        //   collapsed: false,
+        //   position: 'bottomright'
+        // });
+        // pointsLegend2.addTo(map)
 
       var pointsLegend = L.control.layers(null, layers, {
         collapsed: false,
