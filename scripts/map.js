@@ -100,10 +100,6 @@ var feup = L.layerGroup();
 var allMapLayers = {'openallmarkers': openallmarkers};
 var hash = new L.Hash(map, allMapLayers);
 
-for (var i in layers[point.Layer]) {
-  console.log(layers[point.Layer]);
-}
-
 
 
   /**
@@ -156,6 +152,7 @@ for (var i in layers[point.Layer]) {
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
+          console.log(layers[point.Layer]);
           marker.addTo(layers[point.Layer]);
         }
 
