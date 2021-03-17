@@ -98,7 +98,7 @@ $(window).on('load', function() {
 var openallmarkers = L.layerGroup();
 var feup = L.layerGroup();
 var allMapLayers = {'openallmarkers': openallmarkers,
-                    'feup': feup};
+                    'FEUP': feup};
 var hash = new L.Hash(map, allMapLayers);
 
 
@@ -163,6 +163,7 @@ var hash = new L.Hash(map, allMapLayers);
     }
 
     layers["Other Markers Test"] = openallmarkers;
+    layers["FEUP"] = feup;
     openallmarkers.addTo(map);
 
     var group = L.featureGroup(markerArray);
