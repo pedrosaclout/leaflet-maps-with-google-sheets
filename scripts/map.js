@@ -159,7 +159,6 @@ var hash = new L.Hash(map, allMapLayers);
     }
 
     layers["Other Markers Test"] = openallmarkers;
-    layers["FEUP"] = feup;
     openallmarkers.addTo(map);
 
     var group = L.featureGroup(markerArray);
