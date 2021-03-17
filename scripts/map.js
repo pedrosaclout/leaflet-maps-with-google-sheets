@@ -149,7 +149,8 @@ var allMapLayers = {'openallmarkers': openallmarkers};
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
-          allMapLayers[layers[point.Layer]] = layers[point.Layer];
+          allMapLayers["'" + layers[point.Layer] + "'"] = layers[point.Layer];
+          allMapLayers["key3"] = "value3";
         }
 
         markerArray.push(marker);
