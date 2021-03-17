@@ -153,7 +153,7 @@ var hash = new L.Hash(map, allMapLayers);
           openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
-          marker.addTo(layers[point.Group]);
+          marker.addTo(layers[point.Layer]);
         }
 
         markerArray.push(marker);
@@ -244,7 +244,7 @@ var hash = new L.Hash(map, allMapLayers);
       function updateTable() {
         var pointsVisible = [];
         for (i in points) {
-          if (map.hasLayer(layers[points[i].Group]) &&
+          if (map.hasLayer(layers[points[i].Layer]) &&
               map.getBounds().contains(L.latLng(points[i].Latitude, points[i].Longitude))) {
             pointsVisible.push(points[i]);
           }
