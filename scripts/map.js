@@ -96,7 +96,7 @@ $(window).on('load', function() {
 
 
 var openallmarkers = L.layerGroup();
-var allMapLayers = {'openallmarkers': openallmarkers};
+var allMapLayers = {};
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
@@ -149,13 +149,12 @@ var allMapLayers = {'openallmarkers': openallmarkers};
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
+
+          //hash
+          allMapLayers[point.Layer] = layers[point.Layer];
         }
 
         markerArray.push(marker);
-        //hash
-        allMapLayers[point.Layer] = layers[point.Layer];
-        //console.log(point.Layer);
-        console.log("please");
       }
 
     }
