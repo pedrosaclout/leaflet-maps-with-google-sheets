@@ -155,6 +155,7 @@ var allMapLayers = {'openallmarkers': openallmarkers};
         //hash
         allMapLayers[point.Layer] = layers[point.Layer];
         //console.log(point.Layer);
+        console.log("please");
       }
 
     }
