@@ -60,6 +60,7 @@ $(window).on('load', function() {
   }
 
   var openallmarkers = L.layerGroup();
+  var allMapLayers = {'openallmarkers': openallmarkers};
 
   /**
    * Given a collection of points, determines the layers based on 'Layer'
@@ -94,7 +95,6 @@ $(window).on('load', function() {
       }
 
     }
-    var allMapLayers = {'openallmarkers': openallmarkers};
 
     //console.log(layers);
     return layers;
