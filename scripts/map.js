@@ -127,9 +127,6 @@ var allMapLayers = {'openallmarkers': openallmarkers};
           point['Icon Color']
         );
 
-
-
-
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup(
@@ -144,7 +141,7 @@ var allMapLayers = {'openallmarkers': openallmarkers};
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
-          openallmarkers.addLayer(marker);
+          //openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
@@ -161,7 +158,7 @@ var allMapLayers = {'openallmarkers': openallmarkers};
 
 
     layers["Other Markers Test"] = openallmarkers;
-    openallmarkers.addTo(map);
+    //openallmarkers.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
