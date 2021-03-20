@@ -166,7 +166,7 @@ $(window).on('load', function() {
     layers["Other Markers Test"] = openallmarkers;
     //layers["feup"] = feup;
     openallmarkers.addTo(map);
-    feup.addTo(map);
+    //feup.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
