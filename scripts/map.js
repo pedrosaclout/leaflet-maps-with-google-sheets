@@ -95,6 +95,7 @@ $(window).on('load', function() {
   }
 
 var openallmarkers = L.layerGroup();
+var feup = L.layerGroup();
 
 
   /**
