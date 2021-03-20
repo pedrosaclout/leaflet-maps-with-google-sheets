@@ -150,7 +150,7 @@ $(window).on('load', function() {
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
           openallmarkers.addLayer(marker);
-          feup.addLayer(marker);
+          //feup.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
