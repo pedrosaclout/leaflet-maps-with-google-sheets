@@ -59,7 +59,7 @@ $(window).on('load', function() {
     map.setView(center, zoom);
   }
 
-  var allMapLayers = {'openallmarkers': openallmarkers};
+  var openallmarkers = L.layerGroup();
 
   /**
    * Given a collection of points, determines the layers based on 'Layer'
@@ -90,15 +90,17 @@ $(window).on('load', function() {
         layers[layerNameFromSpreadsheet].addTo(map);
 
         //hash
-        allMapLayers[layerNameFromSpreadsheet] = layerNameFromSpreadsheet;
+        allMapLayers[layerNameFromSpreadsheet] = layers[layerNameFromSpreadsheet];
       }
 
     }
+    var allMapLayers = {'openallmarkers': openallmarkers};
+
     //console.log(layers);
     return layers;
   }
 
-var openallmarkers = L.layerGroup();
+
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
