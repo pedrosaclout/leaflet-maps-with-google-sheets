@@ -61,7 +61,7 @@ $(window).on('load', function() {
 
 
   /**
-   * Given a collection of points, determines the layers based on 'Group'
+   * Given a collection of points, determines the layers based on 'Layer'
    * column in the spreadsheet.
    */
   function determineLayers(points) {
@@ -90,10 +90,9 @@ $(window).on('load', function() {
       }
 
     }
-    console.log(layers);
+    //console.log(layers);
     return layers;
   }
-
 
 var openallmarkers = L.layerGroup();
 var allMapLayers = {'openallmarkers': openallmarkers};
@@ -103,10 +102,10 @@ var allMapLayers = {'openallmarkers': openallmarkers};
    */
   function mapPoints(points, layers) {
     var markerArray = [];
+
     // check that map has loaded before adding points to it?
     for (var i in points) {
       var point = points[i];
-
       // If icon contains '.', assume it's a path to a custom icon,
       // otherwise create a Font Awesome icon
       var iconSize = point['Custom Size'];
@@ -158,6 +157,7 @@ var allMapLayers = {'openallmarkers': openallmarkers};
       }
 
     }
+
 
 
     layers["Other Markers Test"] = openallmarkers;

@@ -32,13 +32,15 @@
 <div id='map'></div>
 
 <script>
+//create layer group
 	var cities = L.layerGroup();
 	var countries = L.layerGroup();
+	var villages = L.layerGroup();
 
 	L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
 	L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
 	L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(countries),
-	L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(countries);
+	L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(villages);
 
 
 	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -50,22 +52,24 @@
 	var map = L.map('map', {
 		center: [39.73, -104.99],
 		zoom: 10,
+//layers active when map opens
 		layers: [streets, cities]
 	});
 
-	// Assuming your map instance is in a variable called map
-var allMapLayers = {'cities': cities};
+//hash plugin
+var allMapLayers = {'cities': cities, 'countries': countries, 'villages': villages};
 var hash = new L.Hash(map, allMapLayers);
 
+//creating overlays
 	var overlays = {
 		"Cities": cities,
 		"Countries": countries,
+		"Villages": villages,
 	};
 
+//adding overlays to the map
 	L.control.layers(null, overlays).addTo(map);
 </script>
-
-
 
 
 </body>
