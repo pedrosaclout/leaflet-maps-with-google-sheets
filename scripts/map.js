@@ -87,6 +87,8 @@ $(window).on('load', function() {
         var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
         layers[layerNameFromSpreadsheet] = L.layerGroup();
         layers[layerNameFromSpreadsheet].addTo(map);
+        //hash
+        allMapLayers[layerNameFromSpreadsheet] = layerNameFromSpreadsheet;
       }
 
     }
@@ -145,9 +147,6 @@ var allMapLayers = {'openallmarkers': openallmarkers};
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
-
-          //hash
-          allMapLayers[point.Layer] = layers[point.Layer];
         }
 
         markerArray.push(marker);
