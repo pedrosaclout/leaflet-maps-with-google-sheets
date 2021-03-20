@@ -164,7 +164,7 @@ $(window).on('load', function() {
 
 
     layers["Other Markers Test"] = openallmarkers;
-    layers["FEUP"] = feup;
+    layers["feup"] = feup;
     openallmarkers.addTo(map);
     feup.addTo(map);
 
