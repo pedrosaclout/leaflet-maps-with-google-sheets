@@ -60,9 +60,9 @@ $(window).on('load', function() {
   }
 
   var openallmarkers = L.layerGroup();
-  var teste = L.layerGroup();
+  var feup = L.layerGroup();
   //hash
-  var allMapLayers = {'openallmarkers': openallmarkers, 'teste': teste};
+  var allMapLayers = {'openallmarkers': openallmarkers, 'feup': feup};
 
   /**
    * Given a collection of points, determines the layers based on 'Layer'
@@ -150,7 +150,7 @@ $(window).on('load', function() {
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
           openallmarkers.addLayer(marker);
-          teste.addLayer(marker);
+          //teste.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
@@ -164,9 +164,9 @@ $(window).on('load', function() {
 
 
     layers["Other Markers Test"] = openallmarkers;
-    layers["Teste"] = teste;
+    //layers["Teste"] = teste;
     openallmarkers.addTo(map);
-    teste.addTo(map);
+    //teste.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
