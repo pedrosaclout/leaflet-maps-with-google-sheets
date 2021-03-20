@@ -95,8 +95,7 @@ $(window).on('load', function() {
   }
 
 var openallmarkers = L.layerGroup();
-var feup = L.layerGroup();
-
+var allMapLayers = {'openallmarkers': openallmarkers};
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
@@ -142,13 +141,13 @@ var feup = L.layerGroup();
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
-          //openallmarkers.addLayer(marker);
+          openallmarkers.addLayer(marker);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Layer]);
 
           //hash
-          //allMapLayers[point.Layer] = layers[point.Layer];
+          allMapLayers[point.Layer] = layers[point.Layer];
         }
 
         markerArray.push(marker);
@@ -159,7 +158,7 @@ var feup = L.layerGroup();
 
 
     layers["Other Markers Test"] = openallmarkers;
-    //openallmarkers.addTo(map);
+    openallmarkers.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
@@ -293,7 +292,6 @@ var feup = L.layerGroup();
   }
 
   //full hash plugin
-  var allMapLayers = {'openallmarkers': openallmarkers, 'Feup': feup};
   var hash = new L.Hash(map, allMapLayers);
   console.log(allMapLayers);
 
