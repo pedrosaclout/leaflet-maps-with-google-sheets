@@ -91,23 +91,23 @@ $(window).on('load', function() {
 
   //hash
   var allMapLayers = {
-  'map': streets,
-  'faup': faup,
-  'fbaup': fbaup,
-  'fcup': fcup,
-  'fcnaup': fcnaup,
-  'fadeup': fadeup,
-  'fdup': fdup,
-  'fep': fep,
-  'ffup': ffup,
-  'flup': flup,
-  'fmup': fmup,
-  'fmdup': fmdup,
-  'fpceup': fpceup,
-  'icbas': icbas,
-  'pbs': pbs,
-  'reitoria': reitoria,
-  'other': other
+  'MAP': streets,
+  'FAUP': faup,
+  'FBAUP': fbaup,
+  'FCUP': fcup,
+  'FCNAUP': fcnaup,
+  'FADEUP': fadeup,
+  'FDUP': fdup,
+  'FEP': fep,
+  'FFUP': ffup,
+  'FLUP': flup,
+  'FMUP': fmup,
+  'FMDUP': fmdup,
+  'FPCEUP': fpceup,
+  'ICBAS': icbas,
+  'PBS': pbs,
+  'REITORIA': reitoria,
+  'OTHER': other
 };
 
   /**
@@ -143,7 +143,6 @@ $(window).on('load', function() {
       }
     }
 
-    console.log(layers);
     return layers;
   }
 
@@ -410,7 +409,6 @@ $(window).on('load', function() {
 
   //full hash plugin
   var hash = new L.Hash(map, allMapLayers);
-  console.log(allMapLayers);
 
   var polygon = 0; // current active polygon
   var layer = 0; // number representing current layer among layers in legend
