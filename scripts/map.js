@@ -59,10 +59,21 @@ $(window).on('load', function() {
     map.setView(center, zoom);
   }
 
+  var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
+
+  var streets = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png', {
+    attribution: cartodbAttribution
+  });
+  streets.addTo(map);
+  var baseLayers = {
+    "Streets": streets
+  };
+
   var openallmarkers = L.layerGroup();
   var feup = L.layerGroup();
+  var flup = L.layerGroup();
   //hash
-  var allMapLayers = {'openallmarkers': openallmarkers, 'feup': feup};
+  var allMapLayers = {'streets': streets, 'feup': feup, 'flup': flup};
 
   /**
    * Given a collection of points, determines the layers based on 'Layer'
@@ -96,9 +107,10 @@ $(window).on('load', function() {
         allMapLayers[layerNameFromSpreadsheet] = layers[layerNameFromSpreadsheet];
       }
 
+
     }
 
-    //console.log(layers);
+    console.log(layers);
     return layers;
   }
 
@@ -149,12 +161,19 @@ $(window).on('load', function() {
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
-          openallmarkers.addLayer(marker);
-          feup.addLayer(marker);
+          //openallmarkers.addLayer(marker);
+
 
         if (layers !== undefined && layers.length !== 1) {
+          if (point.Layer === 'FEUP'){
+            marker.addTo(feup);
+          } else if (point.Layer === 'FLUP'){
+            marker.addTo(flup);
+          } else {
           marker.addTo(layers[point.Layer]);
+          }
         }
+
 
         markerArray.push(marker);
       }
@@ -163,10 +182,13 @@ $(window).on('load', function() {
 
 
 
-    layers["Other Markers Test"] = openallmarkers;
+
+    //layers["Other Markers Test"] = openallmarkers;
     layers["feup"] = feup;
+    layers["flup"] = flup;
     openallmarkers.addTo(map);
     feup.addTo(map);
+    flup.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
@@ -201,7 +223,7 @@ $(window).on('load', function() {
         // });
         // pointsLegend2.addTo(map)
 
-      var pointsLegend = L.control.layers(null, layers, {
+      var pointsLegend = L.control.layers(baseLayers, layers, {
         collapsed: false,
         position: pos,
       });
@@ -646,7 +668,9 @@ $(window).on('load', function() {
     createDocumentSettings(options);
 
     document.title = getSetting('_mapTitle');
-    addBaseMap();
+  addBaseMap();
+
+
 
     // Add point markers to the map
     var layers;
@@ -962,6 +986,8 @@ $(window).on('load', function() {
   /**
    * Loads the basemap and adds it to the map
    */
+
+
   function addBaseMap() {
     var basemap = trySetting('_tileProvider', 'CartoDB.Positron');
     L.tileLayer.provider(basemap, {
