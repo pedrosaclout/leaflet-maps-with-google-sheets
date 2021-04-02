@@ -89,6 +89,10 @@ $(window).on('load', function() {
   var reitoria = L.layerGroup();
   var other = L.layerGroup();
 
+  var exchange = L.layerGroup();
+  var alumnu = L.layerGroup();
+  var feupfriend = L.layerGroup();
+
   //hash
   var allMapLayers = {
   'MAP': streets,
@@ -149,7 +153,7 @@ $(window).on('load', function() {
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
-  function mapPoints(points, layers) {
+  function mapPoints(points, layers, alumni) {
     var markerArray = [];
 
     // check that map has loaded before adding points to it?
@@ -190,7 +194,15 @@ $(window).on('load', function() {
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
           '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
-          //openallmarkers.addLayer(marker);
+
+
+          if (point.Alumni === 'Exchange'){
+            marker.addTo(exchange);
+          } else if (point.Alumni === 'Alumni'){
+            marker.addTo(alumnu);
+          } else if (point.Alumni === 'FEUP Friend'){
+            marker.addTo(feupfriend);
+          }
 
 
         if (layers !== undefined && layers.length !== 1) {
@@ -276,6 +288,16 @@ $(window).on('load', function() {
     reitoria.addTo(map);
     other.addTo(map);
 
+    var overlays2 = {
+      "Alumni": alumnu,
+      "Exchange": exchange,
+      "FEUP Friend": feupfriend
+    };
+
+    alumnu.addTo(map);
+    exchange.addTo(map);
+    feupfriend.addTo(map)
+
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
 
@@ -303,11 +325,11 @@ $(window).on('load', function() {
         : getSetting('_pointsLegendPos');
 
 
-        // var pointsLegend2 = L.control.layers(null, layers, {
-        //   collapsed: false,
-        //   position: 'bottomright'
-        // });
-        // pointsLegend2.addTo(map)
+        var pointsLegend2 = L.control.layers(null, overlays2, {
+          collapsed: false,
+          position: 'topleft'
+        });
+        pointsLegend2.addTo(map)
 
       var pointsLegend = L.control.layers(baseLayers, overlays, {
         collapsed: false,
