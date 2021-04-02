@@ -179,10 +179,10 @@ $(window).on('load', function() {
 
     //layers["Other Markers Test"] = openallmarkers;
     var overlays = {
-      "feup": feup,
-      "flup": flup
+      "FEUP": feup,
+      "FLUP": flup
     };
-  
+
     //openallmarkers.addTo(map);
     feup.addTo(map);
     flup.addTo(map);
