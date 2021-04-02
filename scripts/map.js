@@ -71,11 +71,44 @@ $(window).on('load', function() {
     "Streets": streets
   };
 
+  var faup = L.layerGroup();
+  var fbaup = L.layerGroup();
+  var fcup = L.layerGroup();
+  var fcnaup = L.layerGroup();
+  var fadeup = L.layerGroup();
+  var fdup = L.layerGroup();
+  var fep = L.layerGroup();
   var feup = L.layerGroup();
+  var ffup = L.layerGroup();
   var flup = L.layerGroup();
+  var fmup = L.layerGroup();
+  var fmdup = L.layerGroup();
+  var fpceup = L.layerGroup();
+  var icbas = L.layerGroup();
+  var pbs = L.layerGroup();
+  var reitoria = L.layerGroup();
+  var other = L.layerGroup();
 
   //hash
-  var allMapLayers = {'streets': streets, 'feup': feup, 'flup': flup};
+  var allMapLayers = {
+  'streets': streets,
+  'faup': faup,
+  'fbaup': fbaup,
+  'fcup': fcup,
+  'fcnaup': fcnaup,
+  'fadeup': fadeup,
+  'fdup': fdup,
+  'fep': fep,
+  'ffup': ffup,
+  'flup': flup,
+  'fmup': fmup,
+  'fmdup': fmdup,
+  'fpceup': fpceup,
+  'icbas': icbas,
+  'pbs': pbs,
+  'reitoria': reitoria,
+  'other': other
+};
 
   /**
    * Given a collection of points, determines the layers based on 'Layer'
@@ -162,30 +195,87 @@ $(window).on('load', function() {
 
 
         if (layers !== undefined && layers.length !== 1) {
-          if (point.Layer === 'FEUP'){
+          if (point.Layer === 'FAUP'){
+            marker.addTo(faup);
+          } else if (point.Layer === 'FBAUP'){
+            marker.addTo(fbaup);
+          } else if (point.Layer === 'FCUP'){
+            marker.addTo(fcup);
+          } else if (point.Layer === 'FCNAUP'){
+            marker.addTo(fcnaup);
+          } else if (point.Layer === 'FADEUP'){
+            marker.addTo(fadeup);
+          } else if (point.Layer === 'FDUP'){
+            marker.addTo(fdup);
+          } else if (point.Layer === 'FEP'){
+            marker.addTo(fep);
+          } else if (point.Layer === 'FEUP'){
             marker.addTo(feup);
+          } else if (point.Layer === 'FFUP'){
+            marker.addTo(ffup);
           } else if (point.Layer === 'FLUP'){
             marker.addTo(flup);
+          } else if (point.Layer === 'FMUP'){
+            marker.addTo(fmup);
+          } else if (point.Layer === 'FMDUP'){
+            marker.addTo(fmdup);
+          } else if (point.Layer === 'FPCEUP'){
+            marker.addTo(fpceup);
+          } else if (point.Layer === 'ICBAS'){
+            marker.addTo(icbas);
+          } else if (point.Layer === 'PBS'){
+            marker.addTo(pbs);
+          } else if (point.Layer === 'REITORIA'){
+            marker.addTo(reitoria);
+          } else if (point.Layer === 'Other'){
+            marker.addTo(other);
           } else {
           marker.addTo(layers[point.Layer]);
           }
         }
-
 
         markerArray.push(marker);
       }
 
     }
 
-    //layers["Other Markers Test"] = openallmarkers;
     var overlays = {
+      "FAUP": faup,
+      "FBAUP": fbaup,
+      "FCUP": fcup,
+      "FCNAUP": fcnaup,
+      "FADEUP": fadeup,
+      "FDUP": fdup,
+      "FEP": fep,
       "FEUP": feup,
-      "FLUP": flup
+      "FFUP": ffup,
+      "FLUP": flup,
+      "FMUP": fmup,
+      "FMDUP": fmdup,
+      "FPCEUP": fpceup,
+      "ICBAS": icbas,
+      "PBS": pbs,
+      "REITORIA": reitoria,
+      "Other": other
     };
 
-    //openallmarkers.addTo(map);
+    faup.addTo(map);
+    fbaup.addTo(map);
+    fcup.addTo(map);
+    fcnaup.addTo(map);
+    fadeup.addTo(map);
+    fdup.addTo(map);
+    fep.addTo(map);
     feup.addTo(map);
+    ffup.addTo(map);
     flup.addTo(map);
+    fmup.addTo(map);
+    fmdup.addTo(map);
+    fpceup.addTo(map);
+    icbas.addTo(map);
+    pbs.addTo(map);
+    reitoria.addTo(map);
+    other.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
