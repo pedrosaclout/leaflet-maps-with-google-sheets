@@ -68,7 +68,7 @@ $(window).on('load', function() {
   streets.addTo(map);
 
   var baseLayers = {
-    "Streets": streets
+    "Map": streets
   };
 
   var faup = L.layerGroup();
@@ -91,7 +91,7 @@ $(window).on('load', function() {
 
   //hash
   var allMapLayers = {
-  'streets': streets,
+  'map': streets,
   'faup': faup,
   'fbaup': fbaup,
   'fcup': fcup,
