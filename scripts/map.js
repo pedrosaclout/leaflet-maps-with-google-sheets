@@ -25,7 +25,7 @@ $(window).on('load', function() {
    * Sets the view so that all markers are visible, or
    * to specified (lat, lon) and zoom if all three are specified
    */
-  function centerAndZoomMap(points) {
+   function centerAndZoomMap(points) {
     var lat = map.getCenter().lat, latSet = false;
     var lon = map.getCenter().lng, lonSet = false;
     var zoom = 8, zoomSet = false;
@@ -64,14 +64,16 @@ $(window).on('load', function() {
   var streets = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png', {
     attribution: cartodbAttribution
   });
+
   streets.addTo(map);
+
   var baseLayers = {
     "Streets": streets
   };
 
-  var openallmarkers = L.layerGroup();
   var feup = L.layerGroup();
   var flup = L.layerGroup();
+
   //hash
   var allMapLayers = {'streets': streets, 'feup': feup, 'flup': flup};
 
@@ -106,16 +108,11 @@ $(window).on('load', function() {
         //hash
         allMapLayers[layerNameFromSpreadsheet] = layers[layerNameFromSpreadsheet];
       }
-
-
     }
 
     console.log(layers);
     return layers;
   }
-
-
-
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
@@ -180,13 +177,13 @@ $(window).on('load', function() {
 
     }
 
-
-
-
     //layers["Other Markers Test"] = openallmarkers;
-    layers["feup"] = feup;
-    layers["flup"] = flup;
-    openallmarkers.addTo(map);
+    var overlays = {
+      "feup": feup,
+      "flup": flup
+    };
+  
+    //openallmarkers.addTo(map);
     feup.addTo(map);
     flup.addTo(map);
 
@@ -223,7 +220,7 @@ $(window).on('load', function() {
         // });
         // pointsLegend2.addTo(map)
 
-      var pointsLegend = L.control.layers(baseLayers, layers, {
+      var pointsLegend = L.control.layers(baseLayers, overlays, {
         collapsed: false,
         position: pos,
       });
