@@ -899,7 +899,7 @@ var overlays2 = {
     $('#points-legend label span').each(function(i) {
         var legendIcon = (markerColors[i].indexOf('.') > 0)
           ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
-          : '&nbsp;<a title="Click to isolate this layer!" href="https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/map-' + markerLayerUrl[i] + '"><i class="fa fa-map-marker" style="color: '
+          : '&nbsp;<a title="Click to isolate this layer!" href="https://pedrosaclout.github.io/mapa-alumni/#3/36.95/0.18/MAP-' + markerLayerUrl[i] + '"><i class="fa fa-map-marker" style="color: '
             + markerColors[i]
             + '"></i></a>';
         $(this).prepend(legendIcon);
