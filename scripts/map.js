@@ -1,6 +1,7 @@
 $(window).on('load', function() {
   var documentSettings = {};
   var markerColors = [];
+  var markerLayerUrl = [];
 
   var polygonSettings = [];
   var polygonsLegend;
@@ -25,7 +26,7 @@ $(window).on('load', function() {
    * Sets the view so that all markers are visible, or
    * to specified (lat, lon) and zoom if all three are specified
    */
-   function centerAndZoomMap(points) {
+  function centerAndZoomMap(points) {
     var lat = map.getCenter().lat, latSet = false;
     var lon = map.getCenter().lng, lonSet = false;
     var zoom = 8, zoomSet = false;
@@ -59,61 +60,70 @@ $(window).on('load', function() {
     map.setView(center, zoom);
   }
 
+//adding layer streets
   var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
 
   var streets = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png', {
-    attribution: cartodbAttribution
-  });
+  attribution: cartodbAttribution
+});
 
-  streets.addTo(map);
+streets.addTo(map);
 
-  var baseLayers = {
-    "Map": streets
-  };
-
-  var faup = L.layerGroup();
-  var fbaup = L.layerGroup();
-  var fcup = L.layerGroup();
-  var fcnaup = L.layerGroup();
-  var fadeup = L.layerGroup();
-  var fdup = L.layerGroup();
-  var fep = L.layerGroup();
-  var feup = L.layerGroup();
-  var ffup = L.layerGroup();
-  var flup = L.layerGroup();
-  var fmup = L.layerGroup();
-  var fmdup = L.layerGroup();
-  var fpceup = L.layerGroup();
-  var icbas = L.layerGroup();
-  var pbs = L.layerGroup();
-  var reitoria = L.layerGroup();
-  var other = L.layerGroup();
-
-  var exchange = L.layerGroup();
-  var alumnu = L.layerGroup();
-  var feupfriend = L.layerGroup();
-
-  //hash
-  var allMapLayers = {
-  'MAP': streets,
-  'FAUP': faup,
-  'FBAUP': fbaup,
-  'FCUP': fcup,
-  'FCNAUP': fcnaup,
-  'FADEUP': fadeup,
-  'FDUP': fdup,
-  'FEP': fep,
-  'FFUP': ffup,
-  'FLUP': flup,
-  'FMUP': fmup,
-  'FMDUP': fmdup,
-  'FPCEUP': fpceup,
-  'ICBAS': icbas,
-  'PBS': pbs,
-  'REITORIA': reitoria,
-  'OTHER': other
+var baseLayers = {
+  "Map": streets
 };
 
+var faup = L.layerGroup();
+var fbaup = L.layerGroup();
+var fcup = L.layerGroup();
+var fcnaup = L.layerGroup();
+var fadeup = L.layerGroup();
+var fdup = L.layerGroup();
+var fep = L.layerGroup();
+var feup = L.layerGroup();
+var ffup = L.layerGroup();
+var flup = L.layerGroup();
+var fmup = L.layerGroup();
+var fmdup = L.layerGroup();
+var fpceup = L.layerGroup();
+var icbas = L.layerGroup();
+var pbs = L.layerGroup();
+var reitoria = L.layerGroup();
+var other = L.layerGroup();
+
+//create var for three layer menu
+var exchange = L.layerGroup();
+var alumnu = L.layerGroup();
+var feupfriend = L.layerGroup();
+
+//hash
+var allMapLayers = {
+'MAP': streets,
+'FAUP': faup,
+'FBAUP': fbaup,
+'FCUP': fcup,
+'FCNAUP': fcnaup,
+'FADEUP': fadeup,
+'FDUP': fdup,
+'FEP': fep,
+'FFUP': ffup,
+'FLUP': flup,
+'FMUP': fmup,
+'FMDUP': fmdup,
+'FPCEUP': fpceup,
+'ICBAS': icbas,
+'PBS': pbs,
+'REITORIA': reitoria,
+'OTHER': other
+};
+
+//sort object, order alphabetically
+function sortObj(obj) {
+  return Object.keys(obj).sort().reduce(function (result, key) {
+  result[key] = obj[key];
+  return result;
+}, {});
+}
   /**
    * Given a collection of points, determines the layers based on 'Layer'
    * column in the spreadsheet.
@@ -129,6 +139,11 @@ $(window).on('load', function() {
           ? points[i]['Marker Icon']
           : points[i]['Marker Color']
         );
+        markerLayerUrl.push(
+            points[i]['Layer'].indexOf('.') > 0
+            ? points[i]['Layer']
+            : points[i]['Layer']
+          );
         layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
       }
     }
@@ -143,22 +158,24 @@ $(window).on('load', function() {
         layers[layerNameFromSpreadsheet].addTo(map);
 
         //hash
-        allMapLayers[layerNameFromSpreadsheet] = layers[layerNameFromSpreadsheet];
+	      allMapLayers[layerNameFromSpreadsheet] = layers[layerNameFromSpreadsheet];
       }
     }
-
     return layers;
   }
+
+  //tabel: creating an object
+		  var searchdict = {};
 
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
   function mapPoints(points, layers, alumni) {
     var markerArray = [];
-
     // check that map has loaded before adding points to it?
     for (var i in points) {
       var point = points[i];
+
       // If icon contains '.', assume it's a path to a custom icon,
       // otherwise create a Font Awesome icon
       var iconSize = point['Custom Size'];
@@ -180,123 +197,148 @@ $(window).on('load', function() {
           point['Icon Color']
         );
 
+var openallmarkers = L.layerGroup();
+
+
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup(
           '<div class="popup_header">' +
           (point['Image'] ? ('<img src="' + point['Image'] + '" alt="profile picture" id="circle"><br>') : '') +
           '<h2>' + point['Name'] + '</h2>' +
-          '<h3>' + point['Group'] + '</h3></div>' +
-          '<p> ' + point['Description'] + ' </p>' +
+          '<h3 class="locationitalic">' + point['City'] + ", " + point['Country'] + '</h3>' +
+          '<h3>' + point['Alumni'] + ", " + point['Group'] + '</h3></div>' +
+          '<div class="popup_textbody"><p class="biographyscroll"> ' + point['Description'] + ' </p></div>' +
           (point['Website'] ? ('<h4 style="display: inline-block;"> <a class="desktopquery" href="' + point['Website'] + '" target="_blank">Website</a> </h4>') : '') +
           (point['Website'] ? ('<h4 id="website"> <a class="phonequery" href="' + point['Website'] + '" target="_blank"><span class="iconify" data-icon="mdi:web" data-inline="false"></span></a> </h4>') : '') +
           (point['LinkedIn'] ? ('<a class="linkedin desktopquery" href="' + point['LinkedIn'] + '" target="_blank"><h4>LinkedIn</h4></a>') : '') +
           (point['LinkedIn'] ? ('<a class="linkedin phonequery" href="' + point['LinkedIn'] + '" target="_blank"><span class="iconify" data-icon="mdi-linkedin" data-inline="false"></span></a>') : '') +
-          '<a class="shareinvisible" href="' + point['Share'] + '" id="' + point['divid'] + '"></a>' +
+          '<a class="shareinvisible" href="' + point['EnShare'] + '" id="' + point['divid'] + '"></a>' +
           '<button class="btn personalsharebutton" type="button" data-clipboard-target="#' + point['divid'] + '"><span class="material-icons personalshare">share</span></button>');
+          openallmarkers.addLayer(marker);
 
+//ordering alphabetically the object
+if(point['EnShare'] !== null && point['EnShare'] !== '') { //this ignores the faculties entries in google sheet
+  searchdict[point['Tabela']] = [point['EnShare']]; //adding to object a key and value
+ }
 
-          if (point.Alumni === 'Exchange'){
-            marker.addTo(exchange);
-          } else if (point.Alumni === 'Alumni'){
-            marker.addTo(alumnu);
-          } else if (point.Alumni === 'FEUP Friend'){
-            marker.addTo(feupfriend);
-          }
+//three layer menu
+if (point.Alumni === 'Exchange'){
+    marker.addTo(exchange);
+  } else if (point.Alumni === 'Alumni'){
+    marker.addTo(alumnu);
+  } else if (point.Alumni === 'FEUP Friend'){
+    marker.addTo(feupfriend);
+  }
 
+// TABEL ENDS HERE
 
         if (layers !== undefined && layers.length !== 1) {
           if (point.Layer === 'FAUP'){
-            marker.addTo(faup);
-          } else if (point.Layer === 'FBAUP'){
-            marker.addTo(fbaup);
-          } else if (point.Layer === 'FCUP'){
-            marker.addTo(fcup);
-          } else if (point.Layer === 'FCNAUP'){
-            marker.addTo(fcnaup);
-          } else if (point.Layer === 'FADEUP'){
-            marker.addTo(fadeup);
-          } else if (point.Layer === 'FDUP'){
-            marker.addTo(fdup);
-          } else if (point.Layer === 'FEP'){
-            marker.addTo(fep);
-          } else if (point.Layer === 'FEUP'){
-            marker.addTo(feup);
-          } else if (point.Layer === 'FFUP'){
-            marker.addTo(ffup);
-          } else if (point.Layer === 'FLUP'){
-            marker.addTo(flup);
-          } else if (point.Layer === 'FMUP'){
-            marker.addTo(fmup);
-          } else if (point.Layer === 'FMDUP'){
-            marker.addTo(fmdup);
-          } else if (point.Layer === 'FPCEUP'){
-            marker.addTo(fpceup);
-          } else if (point.Layer === 'ICBAS'){
-            marker.addTo(icbas);
-          } else if (point.Layer === 'PBS'){
-            marker.addTo(pbs);
-          } else if (point.Layer === 'REITORIA'){
-            marker.addTo(reitoria);
-          } else if (point.Layer === 'Other'){
-            marker.addTo(other);
-          } else {
-          marker.addTo(layers[point.Layer]);
-          }
+	            marker.addTo(faup);
+	          } else if (point.Layer === 'FBAUP'){
+	            marker.addTo(fbaup);
+	          } else if (point.Layer === 'FCUP'){
+	            marker.addTo(fcup);
+	          } else if (point.Layer === 'FCNAUP'){
+	            marker.addTo(fcnaup);
+	          } else if (point.Layer === 'FADEUP'){
+	            marker.addTo(fadeup);
+	          } else if (point.Layer === 'FDUP'){
+	            marker.addTo(fdup);
+	          } else if (point.Layer === 'FEP'){
+	            marker.addTo(fep);
+	          } else if (point.Layer === 'FEUP'){
+	            marker.addTo(feup);
+	          } else if (point.Layer === 'FFUP'){
+	            marker.addTo(ffup);
+	          } else if (point.Layer === 'FLUP'){
+	            marker.addTo(flup);
+	          } else if (point.Layer === 'FMUP'){
+	            marker.addTo(fmup);
+	          } else if (point.Layer === 'FMDUP'){
+	            marker.addTo(fmdup);
+	          } else if (point.Layer === 'FPCEUP'){
+	            marker.addTo(fpceup);
+	          } else if (point.Layer === 'ICBAS'){
+	            marker.addTo(icbas);
+	          } else if (point.Layer === 'PBS'){
+	            marker.addTo(pbs);
+	          } else if (point.Layer === 'REITORIA'){
+	            marker.addTo(reitoria);
+	          } else if (point.Layer === 'Other'){
+	            marker.addTo(other);
+	          } else {
+	          marker.addTo(layers[point.Layer]);
+	          }
         }
 
         markerArray.push(marker);
       }
-
     }
 
-    var overlays = {
-      "FAUP": faup,
-      "FBAUP": fbaup,
-      "FCUP": fcup,
-      "FCNAUP": fcnaup,
-      "FADEUP": fadeup,
-      "FDUP": fdup,
-      "FEP": fep,
-      "FEUP": feup,
-      "FFUP": ffup,
-      "FLUP": flup,
-      "FMUP": fmup,
-      "FMDUP": fmdup,
-      "FPCEUP": fpceup,
-      "ICBAS": icbas,
-      "PBS": pbs,
-      "REITORIA": reitoria,
-      "Other": other
-    };
+//ordering alphabetically the object
+    let orderdict = sortObj(searchdict);
+    console.log(orderdict);
 
-    faup.addTo(map);
-    fbaup.addTo(map);
-    fcup.addTo(map);
-    fcnaup.addTo(map);
-    fadeup.addTo(map);
-    fdup.addTo(map);
-    fep.addTo(map);
-    feup.addTo(map);
-    ffup.addTo(map);
-    flup.addTo(map);
-    fmup.addTo(map);
-    fmdup.addTo(map);
-    fpceup.addTo(map);
-    icbas.addTo(map);
-    pbs.addTo(map);
-    reitoria.addTo(map);
-    other.addTo(map);
+    for (var key of Object.keys(orderdict)) {
+      var node = document.createElement('a');
+        node.classList.add('anchortabela');
+        node.href = orderdict[key];
+        var textnode = document.createTextNode(key);
+        node.appendChild(textnode);
+        document.getElementById("mytabeladropdown").appendChild(node);
+        //console.log(key + " -> " + orderdict[key])
+  }
 
-    var overlays2 = {
-      "Alumni": alumnu,
-      "Exchange": exchange,
-      "FEUP Friend": feupfriend
-    };
+var overlays = {
+	      "FAUP": faup,
+	      "FBAUP": fbaup,
+	      "FCUP": fcup,
+	      "FCNAUP": fcnaup,
+	      "FADEUP": fadeup,
+	      "FDUP": fdup,
+	      "FEP": fep,
+	      "FEUP": feup,
+	      "FFUP": ffup,
+	      "FLUP": flup,
+	      "FMUP": fmup,
+	      "FMDUP": fmdup,
+	      "FPCEUP": fpceup,
+	      "ICBAS": icbas,
+	      "PBS": pbs,
+	      "REITORIA": reitoria,
+	      "Other": other
+	    };
 
-    alumnu.addTo(map);
-    exchange.addTo(map);
-    feupfriend.addTo(map)
+faup.addTo(map);
+fbaup.addTo(map);
+fcup.addTo(map);
+fcnaup.addTo(map);
+fadeup.addTo(map);
+fdup.addTo(map);
+fep.addTo(map);
+feup.addTo(map);
+ffup.addTo(map);
+flup.addTo(map);
+fmup.addTo(map);
+fmdup.addTo(map);
+fpceup.addTo(map);
+icbas.addTo(map);
+pbs.addTo(map);
+reitoria.addTo(map);
+other.addTo(map);
+
+//3 layer menu
+var overlays2 = {
+	      "Alumni": alumnu,
+	      "Exchange": exchange,
+	      "FEUP Friend": feupfriend
+	    };
+
+	    alumnu.addTo(map);
+	    exchange.addTo(map);
+	    feupfriend.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
@@ -324,17 +366,17 @@ $(window).on('load', function() {
         ? 'topleft'
         : getSetting('_pointsLegendPos');
 
-
-        var pointsLegend2 = L.control.layers(null, overlays2, {
-          collapsed: false,
-          position: 'topleft'
-        });
-        pointsLegend2.addTo(map)
-
-      var pointsLegend = L.control.layers(baseLayers, overlays, {
+      var pointsLegend = L.control.layers(null, overlays, {
         collapsed: false,
         position: pos,
       });
+
+// three layer menu
+      var pointsLegend2 = L.control.layers(null, overlays2, {
+        collapsed: false,
+        position: 'topleft'
+      });
+      pointsLegend2.addTo(map)
 
       if (getSetting('_pointsLegendPos') !== 'off') {
         pointsLegend.addTo(map);
@@ -343,7 +385,7 @@ $(window).on('load', function() {
       }
     }
 
-    $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
+    $('#points-legend').prepend('<h6 class="pointer">' + 'Faculties' + '</h6>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
         + getSetting('_pointsLegendIcon') + '"></i></span>');
@@ -775,9 +817,7 @@ $(window).on('load', function() {
     createDocumentSettings(options);
 
     document.title = getSetting('_mapTitle');
-  addBaseMap();
-
-
+    addBaseMap();
 
     // Add point markers to the map
     var layers;
@@ -856,14 +896,14 @@ $(window).on('load', function() {
     changeAttribution();
 
     // Append icons to categories in markers legend
-    // $('#points-legend label span').each(function(i) {
-    //   var legendIcon = (markerColors[i].indexOf('.') > 0)
-    //     ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
-    //     : '&nbsp;<i class="fa fa-map-marker" style="color: '
-    //       + markerColors[i]
-    //       + '"></i>';
-    //   $(this).prepend(legendIcon);
-    // });
+    $('#points-legend label span').each(function(i) {
+        var legendIcon = (markerColors[i].indexOf('.') > 0)
+          ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
+          : '&nbsp;<a title="Click to isolate this layer!" href="https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/map-' + markerLayerUrl[i] + '"><i class="fa fa-map-marker" style="color: '
+            + markerColors[i]
+            + '"></i></a>';
+        $(this).prepend(legendIcon);
+      });
 
     // When all processing is done, hide the loader and make the map visible
     showMap();
@@ -914,7 +954,7 @@ $(window).on('load', function() {
 
     // Add Google Analytics if the ID exists
     var ga = getSetting('_googleAnalytics');
-    //console.log(ga)
+    console.log(ga)
     if ( ga && ga.length >= 10 ) {
       var gaScript = document.createElement('script');
       gaScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=' + ga);
@@ -934,7 +974,7 @@ $(window).on('load', function() {
     var dispTitle = getSetting('_mapTitleDisplay');
 
     if (dispTitle !== 'off') {
-      var title = '<h1 class="pointer">' + getSetting('_mapTitle') + '</h1>';
+      var title = '<h1 class="pointer">UP Alumni Ambassador</h1>';
       var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
       if (dispTitle == 'topleft') {
@@ -1093,8 +1133,6 @@ $(window).on('load', function() {
   /**
    * Loads the basemap and adds it to the map
    */
-
-
   function addBaseMap() {
     var basemap = trySetting('_tileProvider', 'CartoDB.Positron');
     L.tileLayer.provider(basemap, {
