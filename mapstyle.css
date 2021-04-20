@@ -550,6 +550,35 @@ ul {
   width: 100%;
 }
 
+
+/* Three Layer Menu */
+
+div.leaflet-control-layers:nth-child(2){
+  margin-bottom: 3px;
+}
+
+section.leaflet-control-layers-list:nth-child(2) > div:nth-child(3) > label:nth-child(1), section.leaflet-control-layers-list:nth-child(2) > div:nth-child(3) > label:nth-child(2), section.leaflet-control-layers-list:nth-child(2) > div:nth-child(3) > label:nth-child(3){
+    width: 126px;
+    display: inline-block;
+    font-family: "Open Sans";
+    line-height: 1.5;
+    font-weight: 600;
+    font-size: 11px;
+    color: rgb(172, 4, 4);
+}
+
+section.leaflet-control-layers-list:nth-child(2) > div:nth-child(3) > label:nth-child(3){
+    width: 100px;
+}
+
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control{
+  width: 352px;
+  margin-top: 0 !important;
+  overflow: hidden;
+}
+
+
+
 @media screen and (max-width: 900px) {
   .imageheaderbig{
     display: none;
