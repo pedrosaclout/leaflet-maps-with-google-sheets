@@ -90,11 +90,11 @@ var icbas = L.layerGroup();
 var pbs = L.layerGroup();
 var reitoria = L.layerGroup();
 var other = L.layerGroup();
-//
-// //create var for three layer menu
-// var exchange = L.layerGroup();
-// var alumnu = L.layerGroup();
-// var feupfriend = L.layerGroup();
+
+//create var for three layer menu
+var exchange = L.layerGroup();
+var alumnu = L.layerGroup();
+var feupfriend = L.layerGroup();
 
 //hash
 var allMapLayers = {
@@ -170,7 +170,7 @@ function sortObj(obj) {
   /**
    * Assigns points to appropriate layers and clusters them if needed
    */
-  function mapPoints(points, layers) {
+  function mapPoints(points, layers, alumni) {
     var markerArray = [];
     // check that map has loaded before adding points to it?
     for (var i in points) {
@@ -222,14 +222,14 @@ if(point['EnShare'] !== null && point['EnShare'] !== '') { //this ignores the fa
   searchdict[point['Tabela']] = [point['EnShare']]; //adding to object a key and value
  }
 
-// //three layer menu
-// if (point.Alumni === 'Exchange'){
-//     marker.addTo(exchange);
-//   } else if (point.Alumni === 'Alumni'){
-//     marker.addTo(alumnu);
-//   } else if (point.Alumni === 'FEUP Friend'){
-//     marker.addTo(feupfriend);
-//   }
+//three layer menu
+if (point.Alumni === 'Exchange'){
+    marker.addTo(exchange);
+  } else if (point.Alumni === 'Alumni'){
+    marker.addTo(alumnu);
+  } else if (point.Alumni === 'FEUP Friend'){
+    marker.addTo(feupfriend);
+  }
 
 // TABEL ENDS HERE
 
@@ -291,25 +291,25 @@ if(point['EnShare'] !== null && point['EnShare'] !== '') { //this ignores the fa
         //console.log(key + " -> " + orderdict[key])
   }
 
-  var overlays = {
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FAUP'><i class='fa fa-map-marker' style='color: #c6c6c6' aria-hidden='true'></i></a>&nbsp;FAUP": faup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FBAUP'><i class='fa fa-map-marker' style='color: #58595b' aria-hidden='true'></i></a>&nbsp;FBAUP": fbaup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FCUP'><i class='fa fa-map-marker' style='color: #a1d2f1' aria-hidden='true'></i></a>&nbsp;FCUP": fcup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FCNAUP'><i class='fa fa-map-marker' style='color: #dfa800' aria-hidden='true'></i></a>&nbsp;FCNAUP": fcnaup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FADEUP'><i class='fa fa-map-marker' style='color: #abcf2d' aria-hidden='true'></i></a>&nbsp;FADEUP": fadeup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FDUP'><i class='fa fa-map-marker' style='color: #ef3340' aria-hidden='true'></i></a>&nbsp;FDUP": fdup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FEP'><i class='fa fa-map-marker' style='color: ##da0813' aria-hidden='true'></i></a>&nbsp;FEP": fep,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FEUP'><i class='fa fa-map-marker' style='color: #96362a' aria-hidden='true'></i></a>&nbsp;FEUP": feup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FFUP'><i class='fa fa-map-marker' style='color: #42065E' aria-hidden='true'></i></a>&nbsp;FFUP": ffup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FLUP'><i class='fa fa-map-marker' style='color: #023f5e' aria-hidden='true'></i></a>&nbsp;FLUP": flup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FMUP'><i class='fa fa-map-marker' style='color: #f2e300' aria-hidden='true'></i></a>&nbsp;FMUP": fmup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FMDUP'><i class='fa fa-map-marker' style='color: #f05e22' aria-hidden='true'></i></a>&nbsp;FMDUP": fmdup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-FPCEUP'><i class='fa fa-map-marker' style='color: #f6a252' aria-hidden='true'></i></a>&nbsp;FPCEUP": fpceup,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-ICBAS'><i class='fa fa-map-marker' style='color: #edce16' aria-hidden='true'></i></a>&nbsp;ICBAS": icbas,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-PBS'><i class='fa fa-map-marker' style='color: #2638c4' aria-hidden='true'></i></a>&nbsp;PBS": pbs,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-REITORIA'><i class='fa fa-map-marker' style='color: #be9d6b' aria-hidden='true'></i></a>&nbsp;REITORIA": reitoria,
-      "<a title='Click to isolate this layer!' href='file:///Users/PSC/Desktop/FINISHED 2020/mapa-alumni/index.html#3/31.43/-3.78/MAP-OTHER'><i class='fa fa-map-marker' style='color: #c6c6c6' aria-hidden='true'></i></a>&nbsp;Other": other
-    };
+var overlays = {
+	      "FAUP": faup,
+	      "FBAUP": fbaup,
+	      "FCUP": fcup,
+	      "FCNAUP": fcnaup,
+	      "FADEUP": fadeup,
+	      "FDUP": fdup,
+	      "FEP": fep,
+	      "FEUP": feup,
+	      "FFUP": ffup,
+	      "FLUP": flup,
+	      "FMUP": fmup,
+	      "FMDUP": fmdup,
+	      "FPCEUP": fpceup,
+	      "ICBAS": icbas,
+	      "PBS": pbs,
+	      "REITORIA": reitoria,
+	      "Other": other
+	    };
 
 faup.addTo(map);
 fbaup.addTo(map);
@@ -328,17 +328,17 @@ icbas.addTo(map);
 pbs.addTo(map);
 reitoria.addTo(map);
 other.addTo(map);
-//
-// //3 layer menu
-// var overlays2 = {
-// 	      "Alumni": alumnu,
-// 	      "Exchange": exchange,
-// 	      "FEUP Friend": feupfriend
-// 	    };
-//
-// 	    alumnu.addTo(map);
-// 	    exchange.addTo(map);
-// 	    feupfriend.addTo(map);
+
+//3 layer menu
+var overlays2 = {
+	      "Alumni": alumnu,
+	      "Exchange": exchange,
+	      "FEUP Friend": feupfriend
+	    };
+
+	    alumnu.addTo(map);
+	    exchange.addTo(map);
+	    feupfriend.addTo(map);
 
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
@@ -356,13 +356,11 @@ other.addTo(map);
         multilayerClusterSupport = L.markerClusterGroup.layerSupport({showCoverageOnHover: false});
         multilayerClusterSupport.addTo(map);
 
-        for (i in overlays) {
-          multilayerClusterSupport.checkIn(overlays[i]);
-          overlays[i].addTo(map);
-          console.log(overlays[i])
+        for (i in layers) {
+          multilayerClusterSupport.checkIn(layers[i]);
+          layers[i].addTo(map);
         }
       }
-      
 
       var pos = (getSetting('_pointsLegendPos') == 'off')
         ? 'topleft'
@@ -373,12 +371,12 @@ other.addTo(map);
         position: pos,
       });
 
-// // three layer menu
-//       var pointsLegend2 = L.control.layers(null, overlays2, {
-//         collapsed: false,
-//         position: 'topleft'
-//       });
-//       pointsLegend2.addTo(map)
+// three layer menu
+      var pointsLegend2 = L.control.layers(null, overlays2, {
+        collapsed: false,
+        position: 'topleft'
+      });
+      pointsLegend2.addTo(map)
 
       if (getSetting('_pointsLegendPos') !== 'off') {
         pointsLegend.addTo(map);
@@ -897,15 +895,15 @@ other.addTo(map);
     // Change Map attribution to include author's info + urls
     changeAttribution();
 
-    // // Append icons to categories in markers legend
-    // $('#points-legend label span').each(function(i) {
-    //     var legendIcon = (markerColors[i].indexOf('.') > 0)
-    //       ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
-    //       : '&nbsp;<a title="Click to isolate this layer!" href="https://pedrosaclout.github.io/mapa-alumni/#3/36.95/0.18/MAP-' + markerLayerUrl[i] + '"><i class="fa fa-map-marker" style="color: '
-    //         + markerColors[i]
-    //         + '"></i></a>';
-    //     $(this).prepend(legendIcon);
-    //   });
+    // Append icons to categories in markers legend
+    $('#points-legend label span').each(function(i) {
+        var legendIcon = (markerColors[i].indexOf('.') > 0)
+          ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
+          : '&nbsp;<a title="Click to isolate this layer!" href="https://pedrosaclout.github.io/mapa-alumni/#3/36.95/0.18/MAP-' + markerLayerUrl[i] + '"><i class="fa fa-map-marker" style="color: '
+            + markerColors[i]
+            + '"></i></a>';
+        $(this).prepend(legendIcon);
+      });
 
     // When all processing is done, hide the loader and make the map visible
     showMap();
