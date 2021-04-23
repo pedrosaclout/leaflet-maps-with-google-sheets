@@ -172,6 +172,7 @@
 
 			if (HAS_HASHCHANGE) {
 				L.DomEvent.removeListener(window, "hashchange", this.onHashChange);
+				console.log("hashchange")
 			} else {
 				clearInterval(this.hashChangeInterval);
 			}

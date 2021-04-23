@@ -110,6 +110,17 @@
       </div>
     </footer>
 
+  <!-- Script to clear buttons -->
+  <script>
+  function onClickReset() {
+    button1
+    document.getElementById("button1").innerHTML = button1;
+    button2
+    document.getElementById("button2").innerHTML = button2;
+    // .. other code to set buttons to default state
+  }
+  </script>
+
   <!-- copy personal link to clipboard -->
   <script>
   new ClipboardJS(".btn", {
@@ -121,6 +132,7 @@
     }
   });
   </script>
+
 
   <!-- Script to open and close footer -->
   <script>
@@ -190,6 +202,18 @@
   <script type="text/javascript" src="./scripts/palette.js"></script>
   <script type="text/javascript" src="./scripts/polylabel.js"></script>
   <script type="text/javascript" src="./scripts/map.js"></script>
+  <script type="text/javascript" src="./leaflet.featuregroup.subgroup.js"></script>
+
+  <script>
+$(document).ready(function(){
+    $(".check").click(function(){
+        $("#hello").prop("checked", true);
+    });
+    $(".uncheck").click(function(){
+        $("#hello").prop("checked", false);
+    });
+});
+</script>
 
 </body>
 </html>
