@@ -297,23 +297,23 @@ if (point.Alumni === 'Exchange'){
   }
 
 var overlays = {
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FAUP'><i class='fa fa-map-marker' style='color: #c6c6c6' aria-hidden='true'></i></a>&nbsp;FAUP": faup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FBAUP'><i class='fa fa-map-marker' style='color: #58595b' aria-hidden='true'></i></a>&nbsp;FBAUP": fbaup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FCUP'><i class='fa fa-map-marker' style='color: #a1d2f1' aria-hidden='true'></i></a>&nbsp;FCUP": fcup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FCNAUP'><i class='fa fa-map-marker' style='color: #dfa800' aria-hidden='true'></i></a>&nbsp;FCNAUP": fcnaup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FADEUP'><i class='fa fa-map-marker' style='color: #abcf2d' aria-hidden='true'></i></a>&nbsp;FADEUP": fadeup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FDUP'><i class='fa fa-map-marker' style='color: #ef3340' aria-hidden='true'></i></a>&nbsp;FDUP": fdup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FEP'><i class='fa fa-map-marker' style='color: ##da0813' aria-hidden='true'></i></a>&nbsp;FEP": fep,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FEUP'><i class='fa fa-map-marker' style='color: #96362a' aria-hidden='true'></i></a>&nbsp;FEUP": feup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FFUP'><i class='fa fa-map-marker' style='color: #42065E' aria-hidden='true'></i></a>&nbsp;FFUP": ffup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FLUP'><i class='fa fa-map-marker' style='color: #023f5e' aria-hidden='true'></i></a>&nbsp;FLUP": flup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FMUP'><i class='fa fa-map-marker' style='color: #f2e300' aria-hidden='true'></i></a>&nbsp;FMUP": fmup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FMDUP'><i class='fa fa-map-marker' style='color: #f05e22' aria-hidden='true'></i></a>&nbsp;FMDUP": fmdup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-FPCEUP'><i class='fa fa-map-marker' style='color: #f6a252' aria-hidden='true'></i></a>&nbsp;FPCEUP": fpceup,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-ICBAS'><i class='fa fa-map-marker' style='color: #edce16' aria-hidden='true'></i></a>&nbsp;ICBAS": icbas,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-PBS'><i class='fa fa-map-marker' style='color: #2638c4' aria-hidden='true'></i></a>&nbsp;PBS": pbs,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-REITORIA'><i class='fa fa-map-marker' style='color: #be9d6b' aria-hidden='true'></i></a>&nbsp;REITORIA": reitoria,
-  "<a title='Click to isolate this layer!' href='https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-OTHER'><i class='fa fa-map-marker' style='color: #c6c6c6' aria-hidden='true'></i></a>&nbsp;Other": other
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FAUP'><i class='fa fa-map-marker' style='color: #c6c6c6' aria-hidden='true'></i></a>&nbsp;FAUP": faup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FBAUP'><i class='fa fa-map-marker' style='color: #58595b' aria-hidden='true'></i></a>&nbsp;FBAUP": fbaup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FCUP'><i class='fa fa-map-marker' style='color: #a1d2f1' aria-hidden='true'></i></a>&nbsp;FCUP": fcup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FCNAUP'><i class='fa fa-map-marker' style='color: #dfa800' aria-hidden='true'></i></a>&nbsp;FCNAUP": fcnaup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FADEUP'><i class='fa fa-map-marker' style='color: #abcf2d' aria-hidden='true'></i></a>&nbsp;FADEUP": fadeup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FDUP'><i class='fa fa-map-marker' style='color: #ef3340' aria-hidden='true'></i></a>&nbsp;FDUP": fdup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FEP'><i class='fa fa-map-marker' style='color: ##da0813' aria-hidden='true'></i></a>&nbsp;FEP": fep,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FEUP'><i class='fa fa-map-marker' style='color: #96362a' aria-hidden='true'></i></a>&nbsp;FEUP": feup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FFUP'><i class='fa fa-map-marker' style='color: #42065E' aria-hidden='true'></i></a>&nbsp;FFUP": ffup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FLUP'><i class='fa fa-map-marker' style='color: #023f5e' aria-hidden='true'></i></a>&nbsp;FLUP": flup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FMUP'><i class='fa fa-map-marker' style='color: #f2e300' aria-hidden='true'></i></a>&nbsp;FMUP": fmup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FMDUP'><i class='fa fa-map-marker' style='color: #f05e22' aria-hidden='true'></i></a>&nbsp;FMDUP": fmdup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-FPCEUP'><i class='fa fa-map-marker' style='color: #f6a252' aria-hidden='true'></i></a>&nbsp;FPCEUP": fpceup,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-ICBAS'><i class='fa fa-map-marker' style='color: #edce16' aria-hidden='true'></i></a>&nbsp;ICBAS": icbas,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-PBS'><i class='fa fa-map-marker' style='color: #2638c4' aria-hidden='true'></i></a>&nbsp;PBS": pbs,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-REITORIA'><i class='fa fa-map-marker' style='color: #be9d6b' aria-hidden='true'></i></a>&nbsp;REITORIA": reitoria,
+  "<a title='Click to isolate this layer!' href='https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-OTHER'><i class='fa fa-map-marker' style='color: #c6c6c6' aria-hidden='true'></i></a>&nbsp;Other": other
 };
 
 
@@ -902,7 +902,7 @@ var overlays2 = {
     // $('#points-legend label span').each(function(i) {
     //     var legendIcon = (markerColors[i].indexOf('.') > 0)
     //       ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
-    //       : '&nbsp;<a title="Click to isolate this layer!" href="https://alumni.up.pt/en/mapa-alumni/#3/37.02/0.18/MAP-' + markerLayerUrl[i] + '"><i class="fa fa-map-marker" style="color: '
+    //       : '&nbsp;<a title="Click to isolate this layer!" href="https://pedrosaclout.github.io/mapa-alumni/#3/39.41/2.41/MAP-' + markerLayerUrl[i] + '"><i class="fa fa-map-marker" style="color: '
     //         + markerColors[i]
     //         + '"></i></a>';
     //     $(this).prepend(legendIcon);
